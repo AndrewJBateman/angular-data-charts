@@ -1,6 +1,6 @@
 # Angular MDB4 Navigation
 
-App to use [Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library elements, including [nav bars](https://mdbootstrap.com/docs/angular/navigation/navbar/).
+App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library elements, including [nav bars](https://mdbootstrap.com/docs/angular/navigation/navbar/).
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -28,8 +28,6 @@ App to use [Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library
 * [Angular CLI v7.3.9](https://github.com/angular/angular-cli)
 
 * [Angular framework v7.2.0](https://angular.io/)
-
-* [ng-canvas-gauges v6.0.4](https://www.npmjs.com/package/ng-canvas-gauges)
 
 * [chart.js@2.8.0](https://www.npmjs.com/package/chart.js?activeTab=readme)
 
@@ -68,9 +66,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Status & To-Do List
 
-* Status: Bootstrap code that displays photos using a carousel and a top menu navbar.
+* Status: Working Angular app with Material Bootstrap instralled, that displays photos using a carousel and a top menu navbar. No errors and no dependency conflicts.
 
-* To-Do: Add footer and try different colours and settings then transfer to angular-website. 
+* To-Do: Add footer and try different colours and settings then transfer to angular-website.
 
 ## Inspiration
 
