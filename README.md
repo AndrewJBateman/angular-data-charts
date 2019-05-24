@@ -1,6 +1,6 @@
 # Angular MDB4 Navigation
 
-App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library elements, including [nav bars](https://mdbootstrap.com/docs/angular/navigation/navbar/).
+App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library elements, including [nav bars](https://mdbootstrap.com/docs/angular/navigation/navbar/), [feature section](https://mdbootstrap.com/docs/angular/sections/features/), [project section](https://mdbootstrap.com/docs/angular/sections/projects/) and [blog section](https://mdbootstrap.com/docs/angular/sections/blog/).
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -17,11 +17,13 @@ App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/)
 
 ## General info
 
-* Bootstrap menus.
+* Bootstrap html code pasted in and modified.
 
 ## Screenshots
 
-![Example screenshot](./img/home-screen.png)
+![Example screenshot](./img/carousel.png)
+![Example screenshot](./img/feature-section.png)
+![Example screenshot](./img/blog-smallscreen.png)
 
 ## Technologies
 
@@ -62,17 +64,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Features
 
-* Colour schemes can be changed.
+* lots of bootstrap examples can be simply pasted in. Colour schemes, padding etc can be changed etc in scss.
 
 ## Status & To-Do List
 
-* Status: Working Angular app with Material Bootstrap instralled, that displays photos using a carousel and a top menu navbar. No errors and no dependency conflicts.
+* Status: Working Angular app with Material Bootstrap installed. No errors and no dependency conflicts.
 
-* To-Do: Add footer and try different colours and settings then transfer to angular-website.
+* To-Do: Add footer and try different colours and settings then transfer some parts such as navbar and projects to angular-website.
 
 ## Inspiration
 
 * [Coursetro: MdBootstrap Tutorial - Integrating Material Design, Bootstrap 4 & Angular 5](https://www.youtube.com/watch?v=m68xvSiuijE)
+
+* [Material Design for Bootstrap Angular - 5 min Quick Start](https://www.youtube.com/watch?v=J3M0QS6YB0w)
 
 ## Contact
 
