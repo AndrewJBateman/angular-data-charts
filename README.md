@@ -17,13 +17,12 @@ App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/)
 
 ## General info
 
-* Bootstrap html code pasted in and modified.
+* Bootstrap html code pasted in and modified. Includes routing module and working nav bar.
 
 ## Screenshots
 
-![Example screenshot](./img/carousel.png)
-![Example screenshot](./img/feature-section.png)
-![Example screenshot](./img/blog-smallscreen.png)
+![Example screenshot](./img/home.png)
+![Example screenshot](./img/about.png)
 
 ## Technologies
 
