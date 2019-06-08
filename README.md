@@ -1,4 +1,4 @@
-# Angular MDB4 Navigation
+# Angular MD-Bootstrap Navigation
 
 App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/) library elements, including [nav bars](https://mdbootstrap.com/docs/angular/navigation/navbar/), [feature section](https://mdbootstrap.com/docs/angular/sections/features/), [project section](https://mdbootstrap.com/docs/angular/sections/projects/) and [blog section](https://mdbootstrap.com/docs/angular/sections/blog/).
 
@@ -26,9 +26,9 @@ App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/)
 
 ## Technologies
 
-* [Angular CLI v7.3.9](https://github.com/angular/angular-cli)
+* [Angular CLI v8.0.2](https://github.com/angular/angular-cli)
 
-* [Angular framework v8.0.0.](https://angular.io/)
+* [Angular framework v8.0.0](https://angular.io/)
 
 * [chart.js@2.8.0](https://www.npmjs.com/package/chart.js?activeTab=readme)
 
