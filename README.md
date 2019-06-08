@@ -28,7 +28,7 @@ App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/)
 
 * [Angular CLI v7.3.9](https://github.com/angular/angular-cli)
 
-* [Angular framework v7.2.0](https://angular.io/)
+* [Angular framework v8.0.0.](https://angular.io/)
 
 * [chart.js@2.8.0](https://www.npmjs.com/package/chart.js?activeTab=readme)
 
