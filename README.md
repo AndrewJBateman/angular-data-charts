@@ -26,21 +26,19 @@ App to use [Angular Material Bootstrap 4](https://mdbootstrap.com/docs/angular/)
 
 ## Technologies
 
-* [Angular CLI v8.0.2](https://github.com/angular/angular-cli)
-
-* [Angular framework v8.0.0](https://angular.io/)
+* [Angular framework v9.1.0(https://angular.io/)
 
 * [chart.js@2.8.0](https://www.npmjs.com/package/chart.js?activeTab=readme)
 
 * [font-awesome@4.7.0](https://www.npmjs.com/package/font-awesome)
 
-* [angular-bootstrap-md@7.5.2](https://www.npmjs.com/package/angular-bootstrap-md)
+* [angular-bootstrap-md@8.10.0](https://www.npmjs.com/package/angular-bootstrap-md)
 
 * [hammerjs@2.0.8](https://www.npmjs.com/package/hammerjs)
 
 ## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install dependencies then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code Examples
 
@@ -67,9 +65,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Status & To-Do List
 
-* Status: Working Angular app with Material Bootstrap installed. No errors and no dependency conflicts.
+* Status: NOT Working after Angular 9 upgrade. Angular app with Material Bootstrap installed. No dependency conflicts. Error on compiling:
+`
+ERROR in multi ./src/styles.scss ./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss ./node_modules/@fortawesome/fontawesome-free/scss/solid.scss ./node_modules/@fortawesome/fontawesome-free/scss/regular.scss ./node_modules/@fortawesome/fontawesome-free/scss/brands.scss ./node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss ./node_modules/angular-bootstrap-md/scss/mdb-free.scss
+Module not found: Error: Can't resolve 'C:\Users\gomez\code\angular-mdb4-navigation\node_modules\angular-bootstrap-md\scss\bootstrap\bootstrap.scss' in 'C:\Users\gomez\code\angular-mdb4-navigation'`
 
-* To-Do: Add footer and try different colours and settings then transfer some parts such as navbar and projects to angular-website.
+* To-Do: Fix error. Add footer and try different colours and settings then transfer some parts such as navbar and projects to angular-website.
 
 ## Inspiration
 
