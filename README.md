@@ -1,8 +1,8 @@
-# AngularDataCharts
+# :zap: AngularDataCharts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+This is a blank project to be made into a health-related data monitoring app (Covid19 for example).
 
-## Development server
+## :computer: Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
