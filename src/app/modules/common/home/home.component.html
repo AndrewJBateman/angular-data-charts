@@ -1,1 +1,52 @@
-<p>home works!</p>
+<head>
+  <meta
+    name="description"
+    content="Projects page shows some of my recent projects using Angular cards. Clicking on a card will show the project in more detail or navigate to the GitHub code or the app website."
+  />
+</head>
+
+<mat-card class="">
+  <!-- <img
+    class="mat-card-image"
+    [src]="project.images[0].src"
+    [alt]="project.images[0].page"
+  /> -->
+  <mat-card-content>
+    <h3 class="title-style">Covid-19 Cases: as of {{ data.date }}</h3>
+    <p class="project-content">Confirmed cases: {{ data.result.confirmed }}</p>
+    <p class="project-content">Deaths: {{ data.result.deaths }}</p>
+    <p class="project-content">Recovered: {{ data.result.recovered }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a
+      mat-flat-button
+      [routerLink]=""
+      color="accent"
+      aria-label="See more detail"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </a>
+    <div fxFlex></div>
+    <a
+      mat-flat-button
+      [href]=""
+      target="_blank"
+      rel="noreferrer"
+      color="primary"
+      aria-label="link to GitHub page"
+    >
+      <mat-icon>code</mat-icon>
+    </a>
+    <div fxFlex></div>
+    <a
+      mat-flat-button
+      [href]=""
+      target="_blank"
+      rel="noreferrer"
+      class="project-open-browser"
+      aria-label="link to app web page"
+    >
+      <mat-icon style="color: white;">open_in_browser</mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>

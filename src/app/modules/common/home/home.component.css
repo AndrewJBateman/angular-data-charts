@@ -1,0 +1,40 @@
+.main-title {
+  margin: 10px auto 0 auto !important;
+  color: #0d47a1;
+}
+
+.project-title-icon {
+  transform: scale(1.5);
+  padding-right: 8px;
+}
+
+.mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card > .mat-card-actions:last-child {
+  margin: 0 0;
+  padding: 0;
+}
+
+.mat-card-image {
+  flex-shrink: 0;
+}
+
+.title-style {
+  color: #0d47a1;
+  margin: 0 0 8px;
+  text-decoration: underline;
+  text-decoration-color: #008000;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.project-open-browser {
+  background-color: green;
+}

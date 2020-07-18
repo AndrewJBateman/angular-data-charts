@@ -21,7 +21,8 @@
 
 ## :books: General info
 
-* tbd
+* Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins Universityin CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
+* Covid-19 Page:
 
 ## :camera: Screenshots
 
@@ -63,7 +64,7 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work
+* Status: Home page Covid card displays API data
 * To-Do: menu/nav
 
 ## :clap: Inspiration
