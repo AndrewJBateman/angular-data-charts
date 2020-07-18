@@ -1,0 +1,35 @@
+mat-icon {
+  padding: 0 4px;
+}
+
+.top-nav-link {
+  color: white;
+  font-size: 14px;
+}
+
+.top-link-social {
+  padding: 0 16px;
+  font-size: 14px;
+  color: #eaecf5;
+}
+
+.top-link-active {
+  color: rgb(81, 248, 76);
+}
+
+mat-icon {
+  padding: 0 8px;
+}
+
+.side-nav-link {
+  color: #455a64;
+}
+
+.side-link-social {
+  padding: 16px 0;
+}
+
+.side-link-active {
+  color: #008000;
+  font-weight: bold;
+}

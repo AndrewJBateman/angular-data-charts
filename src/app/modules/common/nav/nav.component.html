@@ -1,0 +1,119 @@
+<div style="height: 100vh;">
+  <!-- Top Navbar sticks to top of screen -->
+  <mat-toolbar color="primary" sticky>
+    <button
+      mat-icon-button
+      (click)="sidenav.toggle()"
+      fxHide.gt-sm
+      aria-label="drop-down menu button"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a
+      class="top-nav-link"
+      routerLink="/home"
+      routerLinkActive="top-link-active"
+      aria-label="home nav button"
+      mat-button
+    >
+      <h2>World Health</h2>
+    </a>
+
+    <span class="example-spacer"></span>
+
+    <div fxFlex fxLayout fxLayoutAlign="end">
+      <div fxShow="true" fxHide.lt-md="true">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a
+        class="top-nav-link"
+        routerLink="/about"
+        routerLinkActive="top-link-active"
+        aria-label="skills nav button"
+        mat-button
+        >About</a
+      >
+      <a
+        class="top-nav-link"
+        routerLink="/contact"
+        routerLinkActive="top-link-active"
+        aria-label="contact nav button"
+        mat-button
+        >Contact</a
+      >
+      <a
+        class="top-link-social"
+        href="https://www.github.com/andrewjbateman"
+        target="_blank"
+        rel="noreferrer"
+        >Github</a
+      >
+      <a
+        class="top-link-social"
+        href="https://www.linkedin.com/in/andrew-bateman"
+        target="_blank"
+        rel="noreferrer"
+        >LinkedIn</a
+      >
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <!--Side navbar-->
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav #sidenav fxLayout="column">
+      <mat-nav-list>
+        <a
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/home"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>language</mat-icon>World Health
+        </a>
+        <a
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/about"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>info</mat-icon>Info
+        </a>
+        <a
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/contact"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>email</mat-icon>Contact
+        </a>
+        <a
+          mat-list-item
+          class="side-link-social"
+          href="https://www.github.com/andrewjbateman"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <mat-icon>open_in_new</mat-icon>Github
+        </a>
+        <a
+          mat-list-item
+          class="side-link-social"
+          href="https://www.linkedin.com/in/andrew-bateman"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <mat-icon>open_in_new</mat-icon>LinkedIn
+        </a>
+        <a mat-list-item (click)="sidenav.toggle()">
+          <mat-icon>close</mat-icon>Close
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
