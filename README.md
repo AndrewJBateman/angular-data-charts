@@ -1,4 +1,4 @@
-# :zap: AngularDataCharts
+# :zap: Angular Data Charts
 
 * This is a health-related data monitoring app.
 
@@ -6,7 +6,7 @@
 
 ## :page_facing_up: Table of contents
 
-* [:zap: AngularDataCharts](#zap-angulardatacharts)
+* [:zap: Angular Data Charts](#zap-angular-data-charts)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -21,7 +21,7 @@
 
 ## :books: General info
 
-* Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins Universityin CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
+* Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
 * Covid-19 Page:
 
 ## :camera: Screenshots
@@ -65,7 +65,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Home page Covid card displays API data
-* To-Do: menu/nav
+* To-Do: add Covid detail page
 
 ## :clap: Inspiration
 

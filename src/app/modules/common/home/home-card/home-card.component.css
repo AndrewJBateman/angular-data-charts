@@ -1,0 +1,62 @@
+.title-style {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: #0d47a1;
+  color: #0d47a1;
+}
+
+.table-style {
+  width: 100%;
+  align-content: center;
+  position: center;
+}
+
+.mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card > .mat-card-actions:last-child {
+  margin: 0 0;
+  padding: 0;
+}
+
+.mat-card-image {
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+  margin: 8px 0;
+}
+
+.highlight-text {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.blue {
+  color:blue;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.card-footer-text {
+  color: #0d47a1;
+  margin: 8px 0;
+  vertical-align: middle;
+}

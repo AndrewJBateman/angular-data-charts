@@ -10,7 +10,11 @@ import { CovidCount } from '../../../models/covid-count';
 })
 export class HomeComponent implements OnInit {
   data: CovidCount;
-  date: string;
+  totalConfirmed = 0;
+  totalDeaths = 0;
+  totalRecovered = 0;
+  date = '';
+
   constructor(private covidDataService: CovidDataService) {}
 
   ngOnInit(): void {
@@ -20,6 +24,10 @@ export class HomeComponent implements OnInit {
   getCovidData() {
     this.covidDataService.getGlobalData().subscribe((data: CovidCount) => {
       this.data = data;
+      this.totalConfirmed = this.data.result.confirmed;
+      this.totalDeaths = this.data.result.deaths;
+      this.totalRecovered = this.data.result.recovered;
+      this.date = this.data.date;
       console.log('data for html', data);
     });
   }

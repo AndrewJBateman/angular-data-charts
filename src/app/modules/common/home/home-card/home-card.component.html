@@ -1,0 +1,42 @@
+<mat-card class="mat-elevation-z1">
+  <img src="../../../../assets/covid.jpg" class="mat-card-image" />
+  <mat-card-content>
+    <h3 class="title-style">Covid-19 Cases</h3>
+    <table class="table-style">
+      <tr>
+        <td>Confirmed:</td>
+        <td class="highlight-text blue">{{ totalConfirmed }}</td>
+      </tr>
+      <tr>
+        <td>Deaths:</td>
+        <td class="highlight-text red">{{ totalDeaths }}</td>
+      </tr>
+      <tr>
+        <td>Recovered:</td>
+        <td class="highlight-text green">{{ totalRecovered }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <p>
+    <span>
+      <p class="card-footer-text">
+        <mat-icon color="accent">calendar_today</mat-icon>
+        {{ date }}
+      </p>
+      <div fxFlex></div>
+      <button mat-mini-fab color="accent" aria-label="Back button">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <div fxFlex></div>
+      <a
+        class="card-footer-text"
+        href="https://coronavirus.jhu.edu/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="link to Johns Hokpins coronavirus resource center"
+      >
+        <mat-icon color="accent">link</mat-icon> J.Hopkins
+      </a>
+    </span>
+  </p>
+</mat-card>

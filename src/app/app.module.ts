@@ -12,6 +12,7 @@ import { HomeComponent } from './modules/common/home/home.component';
 import { ContactComponent } from './modules/common/contact/contact.component';
 import { AboutComponent } from './modules/common/about/about.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
+import { HomeCardComponent } from './modules/common/home/home-card/home-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfoun
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeCardComponent
   ],
   imports: [
     BrowserModule,
