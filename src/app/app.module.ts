@@ -13,6 +13,7 @@ import { ContactComponent } from './modules/common/contact/contact.component';
 import { AboutComponent } from './modules/common/about/about.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
 import { HomeCardComponent } from './modules/common/home/home-card/home-card.component';
+import { CovidCountriesComponent } from './modules/application/covid/covid-countries/covid-countries.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeCardComponent } from './modules/common/home/home-card/home-card.com
     ContactComponent,
     AboutComponent,
     PageNotFoundComponent,
-    HomeCardComponent
+    HomeCardComponent,
+    CovidCountriesComponent
   ],
   imports: [
     BrowserModule,

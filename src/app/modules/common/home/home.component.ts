@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
-import { CovidCount } from '../../../models/covid-count';
+import { CovidCount } from '../../../models/covid';
 
 @Component({
   selector: 'app-home',

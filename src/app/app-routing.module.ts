@@ -6,6 +6,7 @@ import { HomeComponent } from './modules/common/home/home.component';
 import { AboutComponent } from './modules/common/about/about.component';
 import { ContactComponent } from './modules/common/contact/contact.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
+import { CovidCountriesComponent } from './modules/application/covid/covid-countries/covid-countries.component';
 
 const routes: Routes = [
 	{
@@ -16,7 +17,7 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: HomeComponent
-	},
+  },
 	{
 		path: 'about',
     component: AboutComponent
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'covid-countries',
+    component: CovidCountriesComponent
   },
 	{
 		path: '**',

@@ -1,6 +1,6 @@
 # :zap: Angular Data Charts
 
-* This is a health-related data monitoring app.
+* This is a world health data monitoring app.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -22,7 +22,7 @@
 ## :books: General info
 
 * Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
-* Covid-19 Page:
+* Covid-19 Page: in work
 
 ## :camera: Screenshots
 
@@ -64,12 +64,13 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Home page Covid card displays API data
-* To-Do: add Covid detail page
+* Status: Home page Covid card displays API data - change to pie chart? Add translation i18n, add storage for PWA.
+* To-Do: Covid country list - complete with world country flags.
 
 ## :clap: Inspiration
 
 * [Angular Material 10/9 Tutorial: Build Navigation UI with Toolbar and Side Navigation Menu](https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/)
+* [Angular Material Theme Colors](https://medium.com/@treviergits/angular-material-theme-color-options-7d5968cb7460)
 
 ## :envelope: Contact
 
