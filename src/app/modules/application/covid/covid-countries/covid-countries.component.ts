@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Case } from '../../../../models/covid';
+import { CountriesCount } from '../../../../models/covid';
 import { CovidDataService } from '../../../../services/covid-data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-covid-countries',
@@ -8,13 +9,15 @@ import { CovidDataService } from '../../../../services/covid-data.service';
   styleUrls: ['./covid-countries.component.css'],
 })
 export class CovidCountriesComponent implements OnInit {
-  data: Case[];
+  data: Observable<CountriesCount>;
+  countries: CountriesCount;
 
   constructor(private covidDataService: CovidDataService) {}
 
-  ngOnInit(): void {
-    this.covidDataService.getCountriesData().subscribe((data) => {
-      console.log('final data', data);
+  ngOnInit() {
+    this.covidDataService.getCountriesData().subscribe((data: CountriesCount) => {
+      this.countries = data;
+      console.log('final countries data', this.countries);
     });
   }
 }

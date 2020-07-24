@@ -5,15 +5,15 @@
     <table class="table-style">
       <tr>
         <td>Confirmed:</td>
-        <td class="highlight-text blue">{{ totalConfirmed }}</td>
+        <td class="highlight-text blue">{{ totalConfirmed | number }}</td>
       </tr>
       <tr>
         <td>Deaths:</td>
-        <td class="highlight-text red">{{ totalDeaths }}</td>
+        <td class="highlight-text red">{{ totalDeaths | number }}</td>
       </tr>
       <tr>
         <td>Recovered:</td>
-        <td class="highlight-text green">{{ totalRecovered }}</td>
+        <td class="highlight-text green">{{ totalRecovered | number }}</td>
       </tr>
     </table>
   </mat-card-content>

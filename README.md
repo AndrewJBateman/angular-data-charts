@@ -38,6 +38,7 @@
 * [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables.
 * [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging.
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
+* [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 
 ## :floppy_disk: Setup
 
