@@ -7,3 +7,26 @@
   color: #0d47a1;
   margin: 0;
 }
+
+.table {
+  width: 100%;
+  background-color: #d6ebf8;
+}
+
+.mat-cell{
+  text-align: center;
+  padding: 15px 0;
+  font-size: 15px;
+}
+
+.mat-header-cell{
+  text-align: center;
+  margin: 1px;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 15px 0;
+}
+
+.mat-column-country {
+  width: 20%;
+}

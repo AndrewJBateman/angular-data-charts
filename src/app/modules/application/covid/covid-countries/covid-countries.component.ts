@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+
 import { CountriesCount } from '../../../../models/covid';
 import { CovidDataService } from '../../../../services/covid-data.service';
 import { Observable } from 'rxjs';
@@ -12,12 +14,20 @@ export class CovidCountriesComponent implements OnInit {
   data: Observable<CountriesCount>;
   countries: CountriesCount;
 
+  // new
+  ELEMENT_DATA: CountriesCount[];
+  columnNames: string[] = ['country', 'confirmed', 'deaths', 'recovered'];
+  dataSource = new MatTableDataSource<CountriesCount>(this.ELEMENT_DATA);
+
   constructor(private covidDataService: CovidDataService) {}
 
   ngOnInit() {
-    this.covidDataService.getCountriesData().subscribe((data: CountriesCount) => {
-      this.countries = data;
-      console.log('final countries data', this.countries);
+    this.getAllReports();
+  }
+
+  public getAllReports() {
+    this.covidDataService.getCountriesData().subscribe((report) => {
+      this.dataSource.data = report as CountriesCount[];
     });
   }
 }

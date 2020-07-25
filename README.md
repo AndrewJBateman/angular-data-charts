@@ -15,14 +15,14 @@
   * [:flashlight: Testing](#flashlight-testing)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [Status & To-Do List](#status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
 * Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
-* Covid-19 Page: in work
+* Covid-19 Page: table of counties - add flags, order by covid figures.
 
 ## :camera: Screenshots
 
@@ -63,7 +63,7 @@
 
 * Separate Material module with all Material modules accessed via Shared module
 
-## :clipboard: Status & To-Do List
+## Status & To-Do List
 
 * Status: Home page Covid card displays API data - change to pie chart? Add translation i18n, add storage for PWA.
 * To-Do: Covid country list - complete with world country flags.
