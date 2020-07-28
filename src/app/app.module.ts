@@ -14,6 +14,8 @@ import { AboutComponent } from './modules/common/about/about.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
 import { HomeCardComponent } from './modules/common/home/home-card/home-card.component';
 import { CovidCountriesComponent } from './modules/application/covid/covid-countries/covid-countries.component';
+import { NewsCardComponent } from './modules/common/home/news-card/news-card.component';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CovidCountriesComponent } from './modules/application/covid/covid-count
     AboutComponent,
     PageNotFoundComponent,
     HomeCardComponent,
-    CovidCountriesComponent
+    CovidCountriesComponent,
+    NewsCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { CovidCountriesComponent } from './modules/application/covid/covid-count
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

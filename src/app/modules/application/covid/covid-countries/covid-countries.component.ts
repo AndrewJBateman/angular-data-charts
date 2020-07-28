@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 export class CovidCountriesComponent implements OnInit {
   data: Observable<CountriesCount>;
   countries: CountriesCount;
+  todayDate: Date;
 
-  // new
   ELEMENT_DATA: CountriesCount[];
   columnNames: string[] = ['country', 'confirmed', 'deaths', 'recovered'];
   dataSource = new MatTableDataSource<CountriesCount>(this.ELEMENT_DATA);
@@ -28,6 +28,8 @@ export class CovidCountriesComponent implements OnInit {
   public getAllReports() {
     this.covidDataService.getCountriesData().subscribe((report) => {
       this.dataSource.data = report as CountriesCount[];
+      this.todayDate = this.dataSource.data[0].lastUpdated;
+      console.log('reports: ', this.dataSource.data);
     });
   }
 }

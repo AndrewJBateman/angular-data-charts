@@ -1,26 +1,40 @@
 <head>
   <meta
     name="description"
-    content="Projects page shows some of my recent projects using Angular cards. Clicking on a card will show the project in more detail or navigate to the GitHub code or the app website."
+    content="Home page with Coronavirus data. Clicking on a card will show the project in more detail or navigate to the GitHub code or the app website."
   />
 </head>
-<div fxLayout="row wrap">
-  <div
-    fxFlex="25"
-    fxFlex.md="33"
-    fxFlex.sm="50"
-    fxFlex.xs="100"
-    fxLayout="column"
-    style="padding: 5px;"
-  >
-    <app-home-card
-      [totalConfirmed]="totalConfirmed"
-      [totalRecovered]="totalRecovered"
-      [totalDeaths]="totalDeaths"
-      [date]="date"
-    >
 
-    </app-home-card>
-   
+  <!--Top Section with Coronavirus data-->
+<div class="home-container">
+  <app-home-card
+    [totalConfirmed]="totalConfirmed"
+    [totalRecovered]="totalRecovered"
+    [totalDeaths]="totalDeaths"
+    [date]="date"
+  >
+  </app-home-card>
+
+  <!--Bottom section: mat-card for each area with data-binding from area.module.ts-->
+  <div fxLayout="row wrap">
+    <div
+      *ngFor="let item of newsItems"
+      fxFlex="25"
+      fxFlex.md="33"
+      fxFlex.sm="50"
+      fxFlex.xs="100"
+      fxLayout="column"
+      style="padding: 5px;"
+    >
+      <app-news-card
+        [title]="item.title"
+        [content]="item.content"
+        [imageUrl]="item.urlToImage"
+        [itemUrl]="item.url"
+        [date]="date"
+        [siteName]="item.siteName"
+      >
+      </app-news-card>
+    </div>
   </div>
 </div>

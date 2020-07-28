@@ -5,28 +5,49 @@
 .main-heading {
   text-align: center;
   color: #0d47a1;
-  margin: 0;
+  margin: 0 0 8px;
+}
+
+.heading-date {
+  font-size: 14px;
+  color: #0000008A;
+  margin-right: 8px;
 }
 
 .table {
   width: 100%;
-  background-color: #d6ebf8;
+  background-color: #f8fbfc;
 }
 
-.mat-cell{
+.mat-cell {
   text-align: center;
   padding: 15px 0;
   font-size: 15px;
 }
 
-.mat-header-cell{
-  text-align: center;
+.country-cell {
+  text-align: left;
+}
+.country-flag {
+  margin-right: 2px;
+}
+
+.mat-header-cell {
+  /* text-align: center; */
   margin: 1px;
   font-weight: bold;
   font-size: 17px;
   padding: 15px 0;
 }
 
+.cases-header {
+  text-align: center;
+}
+
 .mat-column-country {
-  width: 20%;
+  width: 40%;
+}
+
+.mat-column-cases {
+  width: 20%
 }

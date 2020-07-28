@@ -15,13 +15,13 @@
   * [:flashlight: Testing](#flashlight-testing)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [Status & To-Do List](#status--to-do-list)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
-* Home page: Mat-card for Covid-19 data from [pomber](https://github.com/pomber/covid19) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
+* Home page: Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
 * Covid-19 Page: table of counties - add flags, order by covid figures.
 
 ## :camera: Screenshots
@@ -35,10 +35,12 @@
 * [Angular Material v10](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
+* [Dayjs v1](https://github.com/iamkun/dayjs) to convert Github UTC Timestamp to '... ago'
 * [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables.
 * [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging.
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
+* [Country Flags API](https://www.countryflags.io)
 
 ## :floppy_disk: Setup
 
@@ -63,7 +65,7 @@
 
 * Separate Material module with all Material modules accessed via Shared module
 
-## Status & To-Do List
+## :clipboard: Status & To-Do List
 
 * Status: Home page Covid card displays API data - change to pie chart? Add translation i18n, add storage for PWA.
 * To-Do: Covid country list - complete with world country flags.

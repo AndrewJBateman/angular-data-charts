@@ -1,4 +1,8 @@
-/* .mat-card {
+.home-container {
+  margin-top: 16px;
+}
+
+.mat-card {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -27,4 +31,4 @@
 
 .project-open-browser {
   background-color: green;
-} */
+}

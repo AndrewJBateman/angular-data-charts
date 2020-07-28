@@ -1,0 +1,21 @@
+<head>
+  <meta name="description" content="Coronavirus related news card" />
+</head>
+
+<mat-card class="full-height" (click)="onOpenInBrowser()">
+  <img class="mat-card-image" [src]="imageUrl" [alt]="title" />
+  <mat-card-content>
+    <p class="title-style">{{ title }}</p>
+    <p class="content-style" style="height: 90px;">
+      {{ content | slice: 0:200 }}...
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <span class="small-text">
+      <mat-icon color="accent">calendar_today</mat-icon>
+      {{ date | dateConvert }}
+      <div fxFlex></div>
+      {{ siteName }}
+    </span>
+  </mat-card-actions>
+</mat-card>
