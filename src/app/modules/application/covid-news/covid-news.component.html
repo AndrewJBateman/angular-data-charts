@@ -1,0 +1,38 @@
+<head>
+  <meta name="description" content="Coronavirus related news card" />
+</head>
+
+<div class="content" fxLayout="row wrap" fxLayoutGap="8px grid">
+  <div
+    fxLayoutAlign="space-evenly stretch"
+    fxFlex="25%"
+    fxFlex.xs="100%"
+    fxFlex.sm="50%"
+    fxFlex.md="33%"
+    *ngFor="let item of newsItems; index as articleId"
+  >
+    <mat-card
+      class="mat-elevation-z4 mat-card"
+      (click)="onGoToNewsDetail(item)"
+      aria-label="navigate to article detail"
+    >
+      <img
+        mat-card-image
+        [src]="item.urlToImage"
+        [alt]="item.title"
+        class="card-image"
+      />
+      <mat-card-content class="card-content">
+        <p class="title-style">{{ item.title }}</p>
+        <p class="content-style">{{ item.content | slice: 0:100 }}...</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-icon class="date-icon" color="accent">history</mat-icon>
+        {{ item.publishedAt | dateConvert }}
+        <div fxFlex></div>
+        <mat-icon class="source-icon" color="accent">event_note</mat-icon
+        >{{ item.siteName }}
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

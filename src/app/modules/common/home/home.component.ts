@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
-import { GlobalCount, NewsItems, newsItem } from '../../../models/covid';
-import { Observable } from 'rxjs';
+import { GlobalCount, NewsItems, NewsItem } from '../../../models/covid';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +9,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  // data: Observable<GlobalCount>;
-  // results = [];
   totalConfirmed = 0;
   totalDeaths = 0;
   totalRecovered = 0;
@@ -21,19 +18,7 @@ export class HomeComponent implements OnInit {
   totalCasesPerMillionPop = 0;
   date = '';
   newsTotalItems = 0;
-  newsItems: newsItem[];
-  // newsItemTitle = '';
-  // newsItemDescription = '';
-  // newsItemContent = '';
-  // newsItemAuthor = '';
-  // newsItemUrl?:         string;
-  // newsItemUrlToImage?:  string;
-  // newsItemPublishedAt?: Date;
-  // newsItemAddedOn?:     Date;
-  // newsItemSiteName?:    string;
-  // newsItemLanguage?:    string;
-  // newsItemCountryCode?: number;
-  // newsItemStatus?:      number;
+  newsItems: NewsItem[];
 
   constructor(private covidDataService: CovidDataService) {}
 

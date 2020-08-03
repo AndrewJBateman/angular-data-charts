@@ -1,0 +1,50 @@
+.content {
+  padding: 8px;
+}
+
+.content > mat-card {
+  max-width: 200px;
+  display: flex;
+}
+
+.mat-card {
+  flex-direction: column;
+}
+
+.card-image {
+  height: 160px;
+  display: block;
+}
+
+.title-style {
+  margin: 0 0 4px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.content-style {
+  flex-grow: 1;
+  overflow: auto;
+  position: relative;
+}
+
+mat-card-footer {
+  margin: 0 !important;
+  padding-top: 4px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.date-icon {
+  font-size: 18px;
+  margin: 0 4px 0 0;
+  height: 18px;
+  width: 18px;
+}
+
+.source-icon {
+  font-size: 18px;
+  margin: 0 4px 0 8px;
+  height: 18px;
+  width: 18px;
+}

@@ -16,7 +16,7 @@
       aria-label="home nav button"
       mat-button
     >
-      <h2>World Health</h2>
+      <h2>Dashboard</h2>
     </a>
 
     <span class="example-spacer"></span>
@@ -26,9 +26,17 @@
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <a
         class="top-nav-link"
+        routerLink="/covid-news"
+        routerLinkActive="top-link-active"
+        aria-label="covid news nav button"
+        mat-button
+        >Covid News</a
+      >
+        <a
+        class="top-nav-link"
         routerLink="/about"
         routerLinkActive="top-link-active"
-        aria-label="skills nav button"
+        aria-label="about nav button"
         mat-button
         >About</a
       >
@@ -69,8 +77,17 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>language</mat-icon>World Health
+          <mat-icon>analytics</mat-icon>Dashboard
         </a>
+        <a
+        mat-list-item
+        class="side-nav-link"
+        routerLink="/covid-news"
+        routerLinkActive="side-link-active"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon>article</mat-icon>Covid News
+      </a>
         <a
           mat-list-item
           class="side-nav-link"

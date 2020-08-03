@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { CountriesCount } from '../../../../models/covid';
-import { CovidDataService } from '../../../../services/covid-data.service';
+import { CountriesCount } from '../../../models/covid';
+import { CovidDataService } from '../../../services/covid-data.service';
 import { Observable } from 'rxjs';
 
 @Component({

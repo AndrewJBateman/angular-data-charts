@@ -1,0 +1,77 @@
+<ng-container>
+  <mat-card class="mat-elevation-z1">
+    <img mat-card-image [src]="newsItem.urlToImage" alt="{{ newsItem.title }}" />
+
+    <mat-card-header>
+      <!-- <div
+        mat-card-avatar
+        class="header-image"
+        alt="photo of Andrew Bateman"
+      ></div> -->
+      <mat-card-title class="post-title">
+        {{ newsItem.title }}
+      </mat-card-title>
+      <mat-card-subtitle class="post-subtitle">
+        {{ newsItem.siteName }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="post-content">{{ newsItem.content }}</p>
+      <span>
+        <a
+          class=""
+          (click)="onReturnToList()"
+        >
+          <mat-icon color="accent">arrow_back</mat-icon>
+        </a>
+        <div fxFlex></div>
+        <a
+          class="credit-date-text"
+          href="{{ newsItem.url }}"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <mat-icon color="accent">event_note</mat-icon>{{ newsItem.siteName }}
+        </a>
+        <div fxFlex></div>
+        <p class="credit-date-text">
+          <mat-icon color="accent">today</mat-icon>
+          {{ newsItem.publishedAt | date }}
+        </p>
+      </span>
+    </mat-card-content>
+    <hr class="horiz-line" />
+
+    <mat-card-actions align="end">
+      <button
+        mat-flat-button
+        color="accent"
+        (click)="onReturnToList()"
+        aria-label="Back button"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <!-- <div fxFlex></div>
+      <div>
+        <a
+          mat-flat-button
+          (click)="editing = true"
+          color="primary"
+          aria-label="Go back to list of posts"
+          ><mat-icon>edit</mat-icon></a
+        >
+      </div>
+      <div fxFlex></div> -->
+      <!-- <div>
+        <a
+          mat-flat-button
+          (click)="delete()"
+          color="warn"
+          aria-label="Delete post"
+          ><mat-icon>delete</mat-icon></a
+        >
+      </div> -->
+    </mat-card-actions>
+  </mat-card>
+</ng-container>

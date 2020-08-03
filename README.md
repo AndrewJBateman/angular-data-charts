@@ -21,8 +21,9 @@
 
 ## :books: General info
 
-* Home page: Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Data is taken from Johns Hopkins University in CSV format and converted by Pomber into JSON with some helpful data formatting corrections.
-* Covid-19 Page: table of counties - add flags, order by covid figures.
+* **Home Page:** Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Add translation i18n, add storage for PWA.
+* **Countries Page:** table of countries - add flags where missing
+* **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
 
 ## :camera: Screenshots
 
@@ -67,8 +68,8 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Home page Covid card displays API data - change to pie chart? Add translation i18n, add storage for PWA.
-* To-Do: Covid country list - complete with world country flags.
+* Status: In work
+* To-Do: See General Info
 
 ## :clap: Inspiration
 

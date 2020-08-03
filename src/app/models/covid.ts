@@ -30,10 +30,10 @@ export interface CountriesCount {
 
 export interface NewsItems {
   total?: number;
-  items?: newsItem[];
+  items?: NewsItem[];
 }
 
-export interface newsItem {
+export interface NewsItem {
   nid?:         number;
   title?:       string;
   description?: string;

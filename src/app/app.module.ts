@@ -13,9 +13,10 @@ import { ContactComponent } from './modules/common/contact/contact.component';
 import { AboutComponent } from './modules/common/about/about.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
 import { HomeCardComponent } from './modules/common/home/home-card/home-card.component';
-import { CovidCountriesComponent } from './modules/application/covid/covid-countries/covid-countries.component';
-import { NewsCardComponent } from './modules/common/home/news-card/news-card.component';
+import { CovidCountriesComponent } from './modules/application/covid-countries/covid-countries.component';
 import { PipesModule } from './pipes/pipes.module';
+import { CovidNewsComponent } from './modules/application/covid-news/covid-news.component';
+import { NewsDetailComponent } from './modules/application/covid-news/news-detail/news-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PipesModule } from './pipes/pipes.module';
     PageNotFoundComponent,
     HomeCardComponent,
     CovidCountriesComponent,
-    NewsCardComponent
+    CovidNewsComponent,
+    NewsDetailComponent
   ],
   imports: [
     BrowserModule,

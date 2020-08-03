@@ -6,7 +6,9 @@ import { HomeComponent } from './modules/common/home/home.component';
 import { AboutComponent } from './modules/common/about/about.component';
 import { ContactComponent } from './modules/common/contact/contact.component';
 import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfound.component';
-import { CovidCountriesComponent } from './modules/application/covid/covid-countries/covid-countries.component';
+import { CovidCountriesComponent } from './modules/application/covid-countries/covid-countries.component';
+import { CovidNewsComponent } from './modules/application/covid-news/covid-news.component';
+import { NewsDetailComponent } from './modules/application/covid-news/news-detail/news-detail.component';
 
 const routes: Routes = [
 	{
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'covid-countries',
     component: CovidCountriesComponent
+  },
+  {
+    path: 'covid-news',
+    component: CovidNewsComponent
+  },
+  {
+    path: 'news-detail',
+    component: NewsDetailComponent
   },
 	{
 		path: '**',
