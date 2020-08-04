@@ -21,7 +21,7 @@
 
 ## :books: General info
 
-* **Home Page:** Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Add translation i18n, add storage for PWA.
+* **Home Page:** Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Detects user location. Add translation i18n, add storage for PWA.
 * **Countries Page:** table of countries - add flags where missing
 * **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
 
@@ -42,6 +42,7 @@
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Country Flags API](https://www.countryflags.io)
+* [iPapa API](https://ipapi.co/) to detect user location etc.
 
 ## :floppy_disk: Setup
 

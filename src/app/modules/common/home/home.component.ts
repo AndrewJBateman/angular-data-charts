@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
+import { LocationService } from '../../../services/location.service';
 import { GlobalCount, NewsItems, NewsItem } from '../../../models/covid';
 
 @Component({
@@ -9,6 +10,13 @@ import { GlobalCount, NewsItems, NewsItem } from '../../../models/covid';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  lat = '';
+  lng = '';
+  country = '';
+  callingCode = '';
+  city = '';
+  ip = 0;
+
   totalConfirmed = 0;
   totalDeaths = 0;
   totalRecovered = 0;
@@ -20,9 +28,21 @@ export class HomeComponent implements OnInit {
   newsTotalItems = 0;
   newsItems: NewsItem[];
 
-  constructor(private covidDataService: CovidDataService) {}
+  constructor(
+    private covidDataService: CovidDataService,
+    private locationService: LocationService
+  ) {}
 
   ngOnInit(): void {
+    this.locationService.getLocation().subscribe((data: any) => {
+      this.lat = data.latitude;
+      this.lng = data.longitude;
+      this.country = data.country_name;
+      this.callingCode = data.country_calling_code;
+      this.city = data.city;
+      this.ip = data.ip;
+      console.log('location data:', data);
+    });
     this.getCovidData();
     this.getCovidNews();
   }
@@ -45,6 +65,6 @@ export class HomeComponent implements OnInit {
       this.newsTotalItems = data.total;
       this.newsItems = data.items;
       console.log('news data: ', data);
-    })
+    });
   }
 }

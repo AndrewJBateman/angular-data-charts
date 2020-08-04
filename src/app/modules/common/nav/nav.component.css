@@ -14,11 +14,9 @@ mat-icon {
 }
 
 .top-link-active {
-  color: rgb(81, 248, 76);
-}
-
-mat-icon {
-  padding: 0 8px;
+  color: rgb(171, 220, 224);
+  text-decoration: none;
+  padding-left: 20px;
 }
 
 .side-nav-link {
@@ -32,4 +30,17 @@ mat-icon {
 .side-link-active {
   color: #008000;
   font-weight: bold;
+}
+
+.side-menu-header {
+  padding: 18px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: .1em;
+  font-weight: 450;
+  background-color: #008000;
+}
+
+.top-nav-text {
+  margin: auto;
 }

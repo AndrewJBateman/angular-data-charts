@@ -9,15 +9,71 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <a
-      class="top-nav-link"
-      routerLink="/home"
-      routerLinkActive="top-link-active"
-      aria-label="home nav button"
-      mat-button
-    >
-      <h2>Dashboard</h2>
-    </a>
+    <div fxHide.lt-sm="true">
+      <a
+        class="top-nav-link"
+        routerLink="/home"
+        routerLinkActive="top-link-active"
+        aria-label="home nav button"
+        mat-button
+      >
+        <h2>Covid Data</h2>
+      </a>
+    </div>
+    <div fxHide.gt-sm="true">
+      <div *ngIf="isHomeRoute()" class="top-nav-text">
+        <a
+          aria-label="covid news nav link active"
+          [routerLink]="['/home']"
+          routerLinkActive="top-link-active"
+        >
+          <h2>Covid Data</h2>
+        </a>
+      </div>
+      <!-- <a
+        (click)="returnToList()"
+        class="btn btn-outline-primary"
+        ><mat-icon>arrow_back</mat-icon></a
+      > -->
+
+      <!--page titles that appear in nav-bar in active color only when page is active-->
+      <div *ngIf="isCountriesRoute()">
+        <a
+          aria-label="covid news nav link active"
+          [routerLink]="['/covid-countries']"
+          routerLinkActive="top-link-active"
+        >
+          Covid Countries
+        </a>
+      </div>
+      <div *ngIf="isNewsRoute()">
+        <a
+          aria-label="covid news nav link active"
+          [routerLink]="['/covid-news']"
+          routerLinkActive="top-link-active"
+        >
+          Covid News
+        </a>
+      </div>
+      <div *ngIf="isAboutRoute()">
+        <a
+          aria-label="covid news nav link active"
+          [routerLink]="['/about']"
+          routerLinkActive="top-link-active"
+        >
+          About App
+        </a>
+      </div>
+      <div *ngIf="isContactRoute()">
+        <a
+          aria-label="covid news nav link active"
+          [routerLink]="['/contact']"
+          routerLinkActive="top-link-active"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
 
     <span class="example-spacer"></span>
 
@@ -25,43 +81,51 @@
       <div fxShow="true" fxHide.lt-md="true">
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <a
-        class="top-nav-link"
-        routerLink="/covid-news"
-        routerLinkActive="top-link-active"
-        aria-label="covid news nav button"
-        mat-button
-        >Covid News</a
-      >
+          class="top-nav-link"
+          routerLink="/covid-countries"
+          routerLinkActive="top-link-active"
+          aria-label="covid news nav button"
+          mat-button
+          >Countries</a
+        >
         <a
-        class="top-nav-link"
-        routerLink="/about"
-        routerLinkActive="top-link-active"
-        aria-label="about nav button"
-        mat-button
-        >About</a
-      >
-      <a
-        class="top-nav-link"
-        routerLink="/contact"
-        routerLinkActive="top-link-active"
-        aria-label="contact nav button"
-        mat-button
-        >Contact</a
-      >
-      <a
-        class="top-link-social"
-        href="https://www.github.com/andrewjbateman"
-        target="_blank"
-        rel="noreferrer"
-        >Github</a
-      >
-      <a
-        class="top-link-social"
-        href="https://www.linkedin.com/in/andrew-bateman"
-        target="_blank"
-        rel="noreferrer"
-        >LinkedIn</a
-      >
+          class="top-nav-link"
+          routerLink="/covid-news"
+          routerLinkActive="top-link-active"
+          aria-label="covid news nav button"
+          mat-button
+          >News</a
+        >
+        <a
+          class="top-nav-link"
+          routerLink="/about"
+          routerLinkActive="top-link-active"
+          aria-label="about nav button"
+          mat-button
+          >About</a
+        >
+        <a
+          class="top-nav-link"
+          routerLink="/contact"
+          routerLinkActive="top-link-active"
+          aria-label="contact nav button"
+          mat-button
+          >Contact</a
+        >
+        <a
+          class="top-link-social"
+          href="https://www.github.com/andrewjbateman"
+          target="_blank"
+          rel="noreferrer"
+          >Github</a
+        >
+        <a
+          class="top-link-social"
+          href="https://www.linkedin.com/in/andrew-bateman"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
       </div>
     </div>
   </mat-toolbar>
@@ -69,6 +133,7 @@
   <!--Side navbar-->
   <mat-sidenav-container fxFlexFill class="example-container">
     <mat-sidenav #sidenav fxLayout="column">
+      <h2 class="side-menu-header"><mat-icon>coronavirus</mat-icon>Covid</h2>
       <mat-nav-list>
         <a
           mat-list-item
@@ -77,17 +142,27 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>analytics</mat-icon>Dashboard
+          <mat-icon>pie_chart</mat-icon>Charts
         </a>
         <a
         mat-list-item
         class="side-nav-link"
-        routerLink="/covid-news"
+        routerLink="/covid-countries"
         routerLinkActive="side-link-active"
         (click)="sidenav.toggle()"
       >
-        <mat-icon>article</mat-icon>Covid News
+        <mat-icon>language</mat-icon>Countries
       </a>
+        <a
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/covid-news"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>article</mat-icon>News
+        </a>
+        <hr class="horiz-line" />
         <a
           mat-list-item
           class="side-nav-link"
@@ -95,7 +170,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>info</mat-icon>Info
+          <mat-icon>info</mat-icon>About
         </a>
         <a
           mat-list-item
@@ -125,7 +200,7 @@
           <mat-icon>open_in_new</mat-icon>LinkedIn
         </a>
         <a mat-list-item (click)="sidenav.toggle()">
-          <mat-icon>close</mat-icon>Close
+          <mat-icon>cancel</mat-icon>Close
         </a>
       </mat-nav-list>
     </mat-sidenav>
