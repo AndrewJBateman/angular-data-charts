@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from "@angular/common";
 
@@ -8,6 +8,7 @@ import { Location } from "@angular/common";
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  todaysDate = new Date();
 
   constructor(private router: Router,
     private location: Location) { }
@@ -25,6 +26,10 @@ export class NavComponent implements OnInit {
 
   isNewsRoute() {
     return this.router.url === "/covid-news";
+  }
+
+  isNewsDetailRoute() {
+    return this.router.url === "/news-detail"
   }
 
   isAboutRoute() {

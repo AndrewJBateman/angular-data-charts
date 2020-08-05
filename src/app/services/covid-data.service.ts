@@ -16,7 +16,7 @@ export class CovidDataService {
 
   getGlobalData(): Observable<GlobalCount> {
     return this.http.get<GlobalCount>(apiBaseUrl + 'global').pipe(
-      // tap((data: GlobalCount) => console.log('data', data)),
+      tap((data: GlobalCount) => console.log('data', data)),
       map((data: GlobalCount) => data),
       catchError((err) => {
         return throwError(err);

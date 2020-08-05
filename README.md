@@ -41,6 +41,7 @@
 * [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging.
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
+* [Coronatracker API Document](http://api.coronatracker.com/)
 * [Country Flags API](https://www.countryflags.io)
 * [iPapa API](https://ipapi.co/) to detect user location etc.
 

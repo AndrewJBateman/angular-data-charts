@@ -1,9 +1,14 @@
-mat-icon {
-  padding: 0 4px;
+.top-nav-title-icon {
+  padding: 8px 4px 0 16px;
+  color: white;
 }
 
 .top-nav-link {
   color: white;
+  font-size: 14px;
+}
+
+.top-nav-date {
   font-size: 14px;
 }
 
@@ -16,7 +21,7 @@ mat-icon {
 .top-link-active {
   color: rgb(171, 220, 224);
   text-decoration: none;
-  padding-left: 20px;
+  padding-left: 6px;
 }
 
 .side-nav-link {
@@ -39,6 +44,10 @@ mat-icon {
   letter-spacing: .1em;
   font-weight: 450;
   background-color: #008000;
+}
+
+.side-nav-icon {
+  padding-right: 4px;
 }
 
 .top-nav-text {

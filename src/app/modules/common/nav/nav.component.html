@@ -9,7 +9,8 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <div fxHide.lt-sm="true">
+    <!-- <div fxHide.lt-sm="true"> -->
+    <div *ngIf="isHomeRoute()">
       <a
         class="top-nav-link"
         routerLink="/home"
@@ -17,19 +18,19 @@
         aria-label="home nav button"
         mat-button
       >
-        <h2>Covid Data</h2>
+        <h2>Covid Charts</h2>
       </a>
     </div>
     <div fxHide.gt-sm="true">
-      <div *ngIf="isHomeRoute()" class="top-nav-text">
+      <!-- <div *ngIf="isHomeRoute()" class="top-nav-text">
         <a
           aria-label="covid news nav link active"
           [routerLink]="['/home']"
           routerLinkActive="top-link-active"
         >
-          <h2>Covid Data</h2>
+          <h2>Covid Charts</h2>
         </a>
-      </div>
+      </div> -->
       <!-- <a
         (click)="returnToList()"
         class="btn btn-outline-primary"
@@ -43,7 +44,10 @@
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-          Covid Countries
+          Covid Countries<span class="top-nav-date">
+            <mat-icon class="top-nav-title-icon">today</mat-icon
+            >{{ todaysDate | date }}
+          </span>
         </a>
       </div>
       <div *ngIf="isNewsRoute()">
@@ -53,6 +57,19 @@
           routerLinkActive="top-link-active"
         >
           Covid News
+        </a>
+      </div>
+      <div *ngIf="isNewsDetailRoute()">
+        <a
+          aria-label="covid news detail nav link active"
+          [routerLink]="['/news-detail']"
+          routerLinkActive="top-link-active"
+        >
+          News Detail<span class="top-nav-date">
+            <mat-icon class="top-nav-title-icon" class="top-nav-title-icon"
+              >today</mat-icon
+            >{{ todaysDate | date }}
+          </span>
         </a>
       </div>
       <div *ngIf="isAboutRoute()">
@@ -70,7 +87,7 @@
           [routerLink]="['/contact']"
           routerLinkActive="top-link-active"
         >
-          Contact
+          Contact Details
         </a>
       </div>
     </div>
@@ -133,7 +150,9 @@
   <!--Side navbar-->
   <mat-sidenav-container fxFlexFill class="example-container">
     <mat-sidenav #sidenav fxLayout="column">
-      <h2 class="side-menu-header"><mat-icon>coronavirus</mat-icon>Covid</h2>
+      <h2 class="side-menu-header">
+        <mat-icon class="side-nav-icon">coronavirus</mat-icon>Covid
+      </h2>
       <mat-nav-list>
         <a
           mat-list-item
@@ -142,17 +161,17 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>pie_chart</mat-icon>Charts
+          <mat-icon class="side-nav-icon">pie_chart</mat-icon>Charts
         </a>
         <a
-        mat-list-item
-        class="side-nav-link"
-        routerLink="/covid-countries"
-        routerLinkActive="side-link-active"
-        (click)="sidenav.toggle()"
-      >
-        <mat-icon>language</mat-icon>Countries
-      </a>
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/covid-countries"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon class="side-nav-icon">language</mat-icon>Countries
+        </a>
         <a
           mat-list-item
           class="side-nav-link"
@@ -160,7 +179,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>article</mat-icon>News
+          <mat-icon class="side-nav-icon">article</mat-icon>News
         </a>
         <hr class="horiz-line" />
         <a
@@ -170,7 +189,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>info</mat-icon>About
+          <mat-icon class="side-nav-icon">info</mat-icon>About
         </a>
         <a
           mat-list-item
@@ -179,7 +198,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon>email</mat-icon>Contact
+          <mat-icon class="side-nav-icon">email</mat-icon>Contact
         </a>
         <a
           mat-list-item
@@ -188,7 +207,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          <mat-icon>open_in_new</mat-icon>Github
+          <mat-icon class="side-nav-icon">open_in_new</mat-icon>Github
         </a>
         <a
           mat-list-item
@@ -197,10 +216,10 @@
           target="_blank"
           rel="noreferrer"
         >
-          <mat-icon>open_in_new</mat-icon>LinkedIn
+          <mat-icon class="side-nav-icon">open_in_new</mat-icon>LinkedIn
         </a>
         <a mat-list-item (click)="sidenav.toggle()">
-          <mat-icon>cancel</mat-icon>Close
+          <mat-icon class="side-nav-icon">cancel</mat-icon>Close
         </a>
       </mat-nav-list>
     </mat-sidenav>
