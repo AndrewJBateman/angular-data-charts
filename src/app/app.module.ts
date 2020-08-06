@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
@@ -38,7 +39,8 @@ import { NewsDetailComponent } from './modules/application/covid-news/news-detai
     BrowserAnimationsModule,
     FlexLayoutModule,
     SharedModule,
-    PipesModule
+    PipesModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

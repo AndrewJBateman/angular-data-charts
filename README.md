@@ -21,7 +21,8 @@
 
 ## :books: General info
 
-* **Home Page:** Mat-card for Covid-19 data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Detects user location. Add translation i18n, add storage for PWA.
+* **General:** Add translation i18n, add storage for PWA.
+* **Home Page:** Chart data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Detects user location.
 * **Countries Page:** table of countries - add flags where missing
 * **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
 

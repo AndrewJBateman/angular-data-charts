@@ -28,8 +28,15 @@
 .country-cell {
   text-align: left;
 }
+
 .country-flag {
-  margin-right: 2px;
+  margin-right: 4px;
+}
+
+.country-flag-jersey {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
 }
 
 .mat-header-cell {

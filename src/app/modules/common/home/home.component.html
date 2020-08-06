@@ -5,6 +5,11 @@
   />
 </head>
 
+<!--working pie chart-->
+<google-chart [data]="myData" [type]="myType"></google-chart>
+
+<!-- <div #gaugeChart style="width: 100%; height: 100%;"></div> -->
+
 <div class="home-container">
   <app-home-card
     [totalConfirmed]="totalConfirmed"

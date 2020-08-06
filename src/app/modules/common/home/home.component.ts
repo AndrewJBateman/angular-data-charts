@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
 import { LocationService } from '../../../services/location.service';
-import { GlobalCount, NewsItems, NewsItem } from '../../../models/covid';
+import { GlobalCount } from '../../../models/covid';
 
 @Component({
   selector: 'app-home',
@@ -25,12 +25,20 @@ export class HomeComponent implements OnInit {
   totalActiveCases = 0;
   totalCasesPerMillionPop = 0;
   date = '';
-  newsTotalItems = 0;
-  newsItems: NewsItem[];
+
+  // working pie chart data
+  myType = 'PieChart';
+  myData = [
+    ['London', 8136000],
+    ['New York', 8538000],
+    ['Paris', 2244000],
+    ['Berlin', 3470000],
+    ['Kairo', 19500000],
+  ];
 
   constructor(
     private covidDataService: CovidDataService,
-    private locationService: LocationService
+    private locationService: LocationService,
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +52,6 @@ export class HomeComponent implements OnInit {
       console.log('location data:', data);
     });
     this.getCovidData();
-    this.getCovidNews();
   }
 
   getCovidData(): void {
@@ -57,14 +64,6 @@ export class HomeComponent implements OnInit {
       this.totalActiveCases = data.totalActiveCases;
       this.totalCasesPerMillionPop = data.totalCasesPerMillionPop;
       this.date = data.created;
-    });
-  }
-
-  getCovidNews(): void {
-    this.covidDataService.getCovidNews().subscribe((data: NewsItems) => {
-      this.newsTotalItems = data.total;
-      this.newsItems = data.items;
-      console.log('news data: ', data);
     });
   }
 }
