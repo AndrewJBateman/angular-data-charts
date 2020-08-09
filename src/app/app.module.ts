@@ -18,6 +18,7 @@ import { CovidCountriesComponent } from './modules/application/covid-countries/c
 import { PipesModule } from './pipes/pipes.module';
 import { CovidNewsComponent } from './modules/application/covid-news/covid-news.component';
 import { NewsDetailComponent } from './modules/application/covid-news/news-detail/news-detail.component';
+import { ChartsComponent } from './modules/application/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewsDetailComponent } from './modules/application/covid-news/news-detai
     HomeCardComponent,
     CovidCountriesComponent,
     CovidNewsComponent,
-    NewsDetailComponent
+    NewsDetailComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,

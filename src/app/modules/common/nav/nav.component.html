@@ -10,7 +10,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <div fxHide.lt-sm="true"> -->
-    <div *ngIf="isHomeRoute()">
+    <div fxHide.lt-sm="true">
       <a
         class="top-nav-link"
         routerLink="/home"
@@ -18,19 +18,19 @@
         aria-label="home nav button"
         mat-button
       >
-        <h2>Covid Charts</h2>
+        <h2>Home</h2>
       </a>
     </div>
     <div fxHide.gt-sm="true">
-      <!-- <div *ngIf="isHomeRoute()" class="top-nav-text">
+      <div *ngIf="isHomeRoute()" class="top-nav-text">
         <a
           aria-label="covid news nav link active"
           [routerLink]="['/home']"
           routerLinkActive="top-link-active"
         >
-          <h2>Covid Charts</h2>
+          <h2>Home</h2>
         </a>
-      </div> -->
+      </div>
       <!-- <a
         (click)="returnToList()"
         class="btn btn-outline-primary"
@@ -44,7 +44,7 @@
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-          Covid Countries<span class="top-nav-date">
+          Countries<span class="top-nav-date">
             <mat-icon class="top-nav-title-icon">today</mat-icon
             >{{ todaysDate | date }}
           </span>
@@ -56,7 +56,7 @@
           [routerLink]="['/covid-news']"
           routerLinkActive="top-link-active"
         >
-          Covid News
+          News
         </a>
       </div>
       <div *ngIf="isNewsDetailRoute()">
@@ -70,6 +70,15 @@
               >today</mat-icon
             >{{ todaysDate | date }}
           </span>
+        </a>
+      </div>
+      <div *ngIf="isChartsRoute()">
+        <a
+          aria-label="covid charts nav link active"
+          [routerLink]="['/charts']"
+          routerLinkActive="top-link-active"
+        >
+          Analytics
         </a>
       </div>
       <div *ngIf="isAboutRoute()">
@@ -112,6 +121,14 @@
           aria-label="covid news nav button"
           mat-button
           >News</a
+        >
+        <a
+          class="top-nav-link"
+          routerLink="/charts"
+          routerLinkActive="top-link-active"
+          aria-label="covid charts nav button"
+          mat-button
+          >Charts</a
         >
         <a
           class="top-nav-link"
@@ -161,7 +178,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon class="side-nav-icon">pie_chart</mat-icon>Charts
+          <mat-icon class="side-nav-icon">pie_chart</mat-icon>Home
         </a>
         <a
           mat-list-item
@@ -180,6 +197,15 @@
           (click)="sidenav.toggle()"
         >
           <mat-icon class="side-nav-icon">article</mat-icon>News
+        </a>
+        <a
+          mat-list-item
+          class="side-nav-link"
+          routerLink="/charts"
+          routerLinkActive="side-link-active"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon class="side-nav-icon">analytics</mat-icon>Analytics
         </a>
         <hr class="horiz-line" />
         <a

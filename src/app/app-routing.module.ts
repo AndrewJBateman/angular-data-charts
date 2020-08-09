@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './modules/common/pagenotfound/pagenotfoun
 import { CovidCountriesComponent } from './modules/application/covid-countries/covid-countries.component';
 import { CovidNewsComponent } from './modules/application/covid-news/covid-news.component';
 import { NewsDetailComponent } from './modules/application/covid-news/news-detail/news-detail.component';
+import { ChartsComponent } from './modules/application/charts/charts.component';
 
 const routes: Routes = [
 	{
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'news-detail',
     component: NewsDetailComponent
+  },
+  {
+    path: 'charts',
+    component: ChartsComponent
   },
 	{
 		path: '**',
