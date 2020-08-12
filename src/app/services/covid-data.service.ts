@@ -24,10 +24,10 @@ export class CovidDataService {
     );
   }
 
-  getCountriesData(): Observable<CountriesCount> {
-    return this.http.get<CountriesCount>(apiBaseUrl + 'country').pipe(
-      // tap((data: CountriesCount) => console.log('countries data', data)),
-      map((data: CountriesCount) => data),
+  getCountriesArrayData(): Observable<CountriesCount[]> {
+    return this.http.get<CountriesCount[]>(apiBaseUrl + 'country').pipe(
+      // tap((data: CountriesCount[]) => console.log('countries data', data)),
+      map((data: CountriesCount[]) => data),
       catchError((err) => {
         return throwError(err);
       })

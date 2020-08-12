@@ -10,7 +10,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <div fxHide.lt-sm="true"> -->
-    <div fxHide.lt-sm="true">
+    <div fxHide.lt-md="true">
       <a
         class="top-nav-link"
         routerLink="/home"
@@ -44,7 +44,7 @@
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-          Countries<span class="top-nav-date">
+          Covid Countries<span class="top-nav-date">
             <mat-icon class="top-nav-title-icon">today</mat-icon
             >{{ todaysDate | date }}
           </span>
@@ -56,7 +56,7 @@
           [routerLink]="['/covid-news']"
           routerLinkActive="top-link-active"
         >
-          News
+          Covid News
         </a>
       </div>
       <div *ngIf="isNewsDetailRoute()">
@@ -78,7 +78,11 @@
           [routerLink]="['/charts']"
           routerLinkActive="top-link-active"
         >
-          Analytics
+          Charts<span class="top-nav-date">
+            <mat-icon class="top-nav-title-icon" class="top-nav-title-icon"
+              >today</mat-icon
+            >{{ todaysDate | date }}
+          </span>
         </a>
       </div>
       <div *ngIf="isAboutRoute()">
@@ -205,7 +209,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon class="side-nav-icon">analytics</mat-icon>Analytics
+          <mat-icon class="side-nav-icon">analytics</mat-icon>Charts
         </a>
         <hr class="horiz-line" />
         <a

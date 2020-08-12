@@ -1,1 +1,18 @@
-<p>charts works!</p>
+<head>
+  <meta
+    name="description"
+    content="This page shows a charts of all countries with Covid-19 data."
+  />
+</head>
+
+<div class="main-container">
+  <h2 class="main-heading">Google Charts Covid Data</h2>
+  <div class="row" *ngIf="this.countries">
+    <div class="col-md-6 p-4">
+      <google-chart [data]="pieChart"></google-chart>
+    </div>
+    <div class="col-md-6 p-4">
+      <google-chart [data]="columnChart"></google-chart>
+    </div>
+  </div>
+</div>

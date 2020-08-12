@@ -7,6 +7,16 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.main-container {
+  padding-top: 16px;
+}
+
+.main-heading {
+  text-align: center;
+  color: #455a64;
+}
+
 .mat-card-header-text {
   width: 100% !important;
 }

@@ -9,6 +9,10 @@ export interface GlobalCount {
   created: string;
 }
 
+// export interface CountryList {
+//   countries: CountriesCount[];
+// }
+
 export interface CountriesCount {
   countryCode?: string;
   country?: string;

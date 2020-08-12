@@ -26,16 +26,6 @@ export class HomeComponent implements OnInit {
   totalCasesPerMillionPop = 0;
   date = '';
 
-  // working pie chart data
-  myType = 'PieChart';
-  myData = [
-    ['London', 8136000],
-    ['New York', 8538000],
-    ['Paris', 2244000],
-    ['Berlin', 3470000],
-    ['Kairo', 19500000],
-  ];
-
   constructor(
     private covidDataService: CovidDataService,
     private locationService: LocationService,

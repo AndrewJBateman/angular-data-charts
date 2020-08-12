@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class CovidCountriesComponent implements OnInit {
   data: Observable<CountriesCount>;
-  countries: CountriesCount;
+  // countries: CountriesCount;
   todayDate: Date;
 
   ELEMENT_DATA: CountriesCount[];
@@ -22,14 +22,14 @@ export class CovidCountriesComponent implements OnInit {
   constructor(private covidDataService: CovidDataService) {}
 
   ngOnInit() {
-    this.getAllReports();
+    this.getCountryListData();
   }
 
-  public getAllReports() {
-    this.covidDataService.getCountriesData().subscribe((report) => {
-      this.dataSource.data = report as CountriesCount[];
+  public getCountryListData() {
+    this.covidDataService.getCountriesArrayData().subscribe((data) => {
+      this.dataSource.data = data as CountriesCount[];
       this.todayDate = this.dataSource.data[0].lastUpdated;
-      console.log('reports: ', this.dataSource.data);
+      console.log('covid-countries data: ', this.dataSource.data);
     });
   }
 }

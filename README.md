@@ -21,10 +21,11 @@
 
 ## :books: General info
 
-* **General:** Add translation i18n, add storage for PWA.
-* **Home Page:** Chart data from [Corona API](https://api.coronatracker.com/#api-Analytics-FetchAffectedCountries) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. add pie chart? Detects user location.
+* **General:** Add translation i18n, add storage for PWA. Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
+* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country.
 * **Countries Page:** table of countries - added flags where missing
 * **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
+* **Charts Page**pie and column charts using `ng2-google-charts`.
 
 ## :camera: Screenshots
 
@@ -78,6 +79,8 @@
 
 * [Angular Material 10/9 Tutorial: Build Navigation UI with Toolbar and Side Navigation Menu](https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/)
 * [Angular Material Theme Colors](https://medium.com/@treviergits/angular-material-theme-color-options-7d5968cb7460)
+* [ng2-google-charts example](https://www.devrandom.it/software/ng2-google-charts/demo/)
+* [Github repo: ng2-google-charts](https://github.com/gmazzamuto/ng2-google-charts/blob/master/src/app/charts-gallery/charts-gallery.component.ts)
 
 ## :envelope: Contact
 
