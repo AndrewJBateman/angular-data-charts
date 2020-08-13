@@ -4,15 +4,23 @@
     <!-- <h3 class="title-style">Worldwide Covid-19 Cases</h3> -->
     <table class="table-style">
       <tr>
+        <td>Cases</td>
+        <td class="card-header">World</td>
+        <td class="card-header">France</td>
+      </tr>
+      <tr>
         <td>Confirmed:</td>
+        <td class="highlight-text blue">{{ totalConfirmed | number }}</td>
         <td class="highlight-text blue">{{ totalConfirmed | number }}</td>
       </tr>
       <tr>
         <td>Deaths:</td>
         <td class="highlight-text red">{{ totalDeaths | number }}</td>
+        <td class="highlight-text red">{{ totalDeaths | number }}</td>
       </tr>
       <tr>
         <td>Recovered:</td>
+        <td class="highlight-text green">{{ totalRecovered | number }}</td>
         <td class="highlight-text green">{{ totalRecovered | number }}</td>
       </tr>
     </table>

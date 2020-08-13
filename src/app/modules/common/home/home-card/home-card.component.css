@@ -17,6 +17,7 @@
   /* height: 100%; */
   display: flex;
   flex-direction: column;
+  max-width: 400px;
 }
 
 .mat-card > .mat-card-actions:last-child {
@@ -28,6 +29,10 @@
   flex-shrink: 0;
   width: 100% !important;
   /* align-items: center; */
+}
+
+.card-header {
+  text-align: right;
 }
 
 .mat-card-content {
