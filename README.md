@@ -25,7 +25,7 @@
 * **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country.
 * **Countries Page:** table of countries - added flags where missing
 * **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
-* **Charts Page**pie and column charts using `ng2-google-charts`.
+* **Charts Page**pie and column charts using `ng2-google-charts`. Not re-rendering after data table changed. Change to angular-google-charts?
 
 ## :camera: Screenshots
 

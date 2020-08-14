@@ -6,12 +6,29 @@
 </head>
 
 <div class="main-container">
-  <h2 class="main-heading">Google Charts Covid Data</h2>
-  <div class="row" *ngIf="this.countries">
-    <div class="col-md-6 p-4">
+  <h2 class="main-heading" fxHide.lt-md>Google Charts Covid Data</h2>
+
+  <label id="cases-radio-group-label">Select Data Class</label>
+  <mat-radio-group
+    aria-labelledby="cases-radio-group-label"
+    class="cases-radio-group"
+    [(ngModel)]="selectedClass"
+  >
+    <mat-radio-button
+      class="cases-radio-button"
+      *ngFor="let caseClass of caseClasses"
+      [value]="caseClass"
+      (click)="fetchChartData(caseClass)"
+    >
+      {{ caseClass }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <div class="row" *ngIf="dataTableContents[0]">
+    <div class="col-md-6">
       <google-chart [data]="pieChart"></google-chart>
     </div>
-    <div class="col-md-6 p-4">
+    <div class="col-md-6">
       <google-chart [data]="columnChart"></google-chart>
     </div>
   </div>

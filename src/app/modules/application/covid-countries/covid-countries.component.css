@@ -6,13 +6,15 @@
 
 .heading-date {
   font-size: 14px;
-  color: #0000008A;
+  color: #0000008a;
   margin-right: 8px;
 }
 
 .table {
   width: 100%;
+  max-width: 600px;
   background-color: #f8fbfc;
+  margin: 0 auto;
 }
 
 .mat-cell {
@@ -52,5 +54,5 @@
 }
 
 .mat-column-cases {
-  width: 23%
+  width: 23%;
 }

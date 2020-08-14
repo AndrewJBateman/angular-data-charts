@@ -1,4 +1,9 @@
-/* google-chart {
-  max-width: 100%;
-  height: 350px;
-} */
+.cases-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.cases-radio-button {
+  margin: 5px;
+}
