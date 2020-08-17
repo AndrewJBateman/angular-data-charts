@@ -21,11 +21,11 @@
 
 ## :books: General info
 
-* **General:** Add translation i18n, add storage for PWA. Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
-* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country.
+* **General:** Add storage for PWA - location then data for charts/countries list, Add translation i18n, . Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
+* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country - **store in storage service**
 * **Countries Page:** table of countries - added flags where missing
-* **News & NewsDetail Pages:** news from user country - add country detect and select menu. Click to go to New Detail Page.
-* **Charts Page**pie and column charts using `ng2-google-charts`. Not re-rendering after data table changed. Change to angular-google-charts?
+* **News & NewsDetail Pages:** news from user country. Click to go to New Detail Page. **add country detect and select menu.**
+* **Charts Page**pie and column charts using `angular-google-charts`.
 
 ## :camera: Screenshots
 
@@ -38,9 +38,10 @@
 * [Angular Material v10](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
+* [Angular Google Charts](https://www.npmjs.com/package/angular-google-charts) wrapper for the Google Charts library
 * [Dayjs v1](https://github.com/iamkun/dayjs) to convert Github UTC Timestamp to '... ago'
-* [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables.
-* [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging.
+* [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables
+* [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Coronatracker API Document](http://api.coronatracker.com/)
