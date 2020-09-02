@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { StorageService } from '../../../services/localstorage.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,8 +10,13 @@ import { Location } from '@angular/common';
 })
 export class NavComponent implements OnInit {
   todaysDate = new Date();
+  totalNewsItems: number;
 
-  constructor(private router: Router, private location: Location) {}
+  constructor(
+    private router: Router,
+    private location: Location,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -23,6 +29,7 @@ export class NavComponent implements OnInit {
   }
 
   isNewsRoute() {
+    this.totalNewsItems = this.storageService.get("newsArrayLength");
     return this.router.url === '/covid-news';
   }
 

@@ -31,8 +31,14 @@
   /* align-items: center; */
 }
 
-.card-header {
+.card-left-header {
+  text-align: left;
+  font-weight: bold;
+}
+
+.card-right-header {
   text-align: right;
+  font-weight: bold;
 }
 
 .mat-card-content {

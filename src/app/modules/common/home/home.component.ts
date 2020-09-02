@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
 import { LocationService } from '../../../services/location.service';
-import { GlobalCount } from '../../../models/covid';
+import { StorageService } from '../../../services/localstorage.service';
+import { GlobalCount, CountriesCount } from '../../../models/covid';
+import { Location } from '../../../models/location';
 
 @Component({
   selector: 'app-home',
@@ -10,50 +12,36 @@ import { GlobalCount } from '../../../models/covid';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  lat = '';
-  lng = '';
-  country = '';
-  callingCode = '';
-  city = '';
-  ip = 0;
-
-  totalConfirmed = 0;
-  totalDeaths = 0;
-  totalRecovered = 0;
-  totalNewCases = 0;
-  totalNewDeaths = 0;
-  totalActiveCases = 0;
-  totalCasesPerMillionPop = 0;
-  date = '';
+  userCountry: '';
+  userCountryCode: '';
+  language = '';
+  storedGlobalData: GlobalCount;
+  userCountryData: CountriesCount;
 
   constructor(
     private covidDataService: CovidDataService,
     private locationService: LocationService,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
-    this.locationService.getLocation().subscribe((data: any) => {
-      this.lat = data.latitude;
-      this.lng = data.longitude;
-      this.country = data.country_name;
-      this.callingCode = data.country_calling_code;
-      this.city = data.city;
-      this.ip = data.ip;
-      console.log('location data:', data);
+    this.locationService.getLocation().subscribe((data: Location) => {
+      this.storageService.set('userCountryData', data);
     });
-    this.getCovidData();
+    this.getGlobalCovidData();
+    this.getUserCountryCovidData();
   }
 
-  getCovidData(): void {
+  getGlobalCovidData(): void {
     this.covidDataService.getGlobalData().subscribe((data: GlobalCount) => {
-      this.totalConfirmed = data.totalConfirmed;
-      this.totalDeaths = data.totalDeaths;
-      this.totalRecovered = data.totalRecovered;
-      this.totalNewCases = data.totalNewCases;
-      this.totalNewDeaths = data.totalNewDeaths;
-      this.totalActiveCases = data.totalActiveCases;
-      this.totalCasesPerMillionPop = data.totalCasesPerMillionPop;
-      this.date = data.created;
+      this.storageService.set('storedGlobalData', data);
+      this.storedGlobalData = this.storageService.get('globalData');
+    });
+  }
+
+  getUserCountryCovidData(): void {
+    this.covidDataService.getUserCountryData().subscribe((data: CountriesCount[]) => {
+      this.userCountryData = data[0];
     });
   }
 }

@@ -16,7 +16,7 @@ export class NewsDetailComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params) => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.newsItem = this.router.getCurrentNavigation().extras.state.item;
-        console.log('this.newsItem', this.newsItem);
+        // console.log('this.newsItem', this.newsItem);
       }
     });
   }

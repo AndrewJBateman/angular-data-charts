@@ -4,24 +4,24 @@
     <!-- <h3 class="title-style">Worldwide Covid-19 Cases</h3> -->
     <table class="table-style">
       <tr>
-        <td>Cases</td>
-        <td class="card-header">World</td>
-        <td class="card-header">France</td>
+        <td class="card-left-header">Cases</td>
+        <td class="card-right-header">World</td>
+        <td class="card-right-header">{{ userCountry }}</td>
       </tr>
       <tr>
         <td>Confirmed:</td>
-        <td class="highlight-text blue">{{ totalConfirmed | number }}</td>
-        <td class="highlight-text blue">{{ totalConfirmed | number }}</td>
+        <td class="highlight-text blue">{{ worldTotalConfirmed | number }}</td>
+        <td class="highlight-text blue">{{ userCountryTotalConfirmed | number }}</td>
       </tr>
       <tr>
         <td>Deaths:</td>
-        <td class="highlight-text red">{{ totalDeaths | number }}</td>
-        <td class="highlight-text red">{{ totalDeaths | number }}</td>
+        <td class="highlight-text red">{{ worldTotalDeaths | number }}</td>
+        <td class="highlight-text red">{{ userCountryTotalDeaths | number }}</td>
       </tr>
       <tr>
         <td>Recovered:</td>
-        <td class="highlight-text green">{{ totalRecovered | number }}</td>
-        <td class="highlight-text green">{{ totalRecovered | number }}</td>
+        <td class="highlight-text green">{{ worldTotalRecovered | number }}</td>
+        <td class="highlight-text green">{{ userCountryTotalRecovered | number }}</td>
       </tr>
     </table>
   </mat-card-content>

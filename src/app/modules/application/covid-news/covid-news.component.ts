@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 
 import { CovidDataService } from '../../../services/covid-data.service';
-import { GlobalCount, NewsItems, NewsItem } from '../../../models/covid';
+import { NewsItems, NewsItem } from '../../../models/covid';
+import { StorageService } from '../../../services/localstorage.service';
 
 @Component({
   selector: 'app-covid-news',
@@ -16,18 +17,20 @@ export class CovidNewsComponent implements OnInit {
 
   constructor(
     private covidDataService: CovidDataService,
-    private router: Router
+    private router: Router,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
     this.getCovidNews();
   }
 
+  // subscribe to news API data observable
   getCovidNews(): void {
     this.covidDataService.getCovidNews().subscribe((data: NewsItems) => {
-      this.newsTotalItems = data.total;
-      this.newsItems = data.items;
-      console.log('news data: ', data);
+      this.storageService.set("totalNewsItems", data.total);
+      this.storageService.set("storedNewsItems", data.items);
+      this.newsItems = this.storageService.get("storedNewsItems");
     });
   }
 

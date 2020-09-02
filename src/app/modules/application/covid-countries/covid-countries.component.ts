@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { CountriesCount } from '../../../models/covid';
 import { CovidDataService } from '../../../services/covid-data.service';
+import { StorageService } from '../../../services/localstorage.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class CovidCountriesComponent implements OnInit {
   data: Observable<CountriesCount>;
+  storedCountryData: Observable<CountriesCount>;
   // countries: CountriesCount;
   todayDate: Date;
 
@@ -19,7 +21,11 @@ export class CovidCountriesComponent implements OnInit {
   columnNames: string[] = ['country', 'confirmed', 'deaths', 'recovered'];
   dataSource = new MatTableDataSource<CountriesCount>(this.ELEMENT_DATA);
 
-  constructor(private covidDataService: CovidDataService) {}
+
+  constructor(
+    private covidDataService: CovidDataService,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit() {
     this.getCountryListData();
@@ -29,7 +35,7 @@ export class CovidCountriesComponent implements OnInit {
     this.covidDataService.getCountriesArrayData().subscribe((data) => {
       this.dataSource.data = data as CountriesCount[];
       this.todayDate = this.dataSource.data[0].lastUpdated;
-      console.log('covid-countries data: ', this.dataSource.data);
+      // console.log('covid-countries data: ', this.dataSource.data);
     });
   }
 }

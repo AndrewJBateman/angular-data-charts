@@ -44,7 +44,7 @@
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-          Covid Countries<span class="top-nav-date">
+          Covid Cases<span class="top-nav-date">
             <mat-icon class="top-nav-title-icon">today</mat-icon
             >{{ todaysDate | date }}
           </span>
@@ -56,7 +56,7 @@
           [routerLink]="['/covid-news']"
           routerLinkActive="top-link-active"
         >
-          Covid News
+          Covid News ({{ totalNewsItems }} Items)
         </a>
       </div>
       <div *ngIf="isNewsDetailRoute()">

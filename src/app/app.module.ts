@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StorageService } from './services/localstorage.service';
+
 import { NavComponent } from './modules/common/nav/nav.component';
 import { SharedModule } from './modules/common/shared/shared.module';
 import { HomeComponent } from './modules/common/home/home.component';
@@ -44,7 +46,7 @@ import { ChartsComponent } from './modules/application/charts/charts.component';
     SharedModule,
     PipesModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

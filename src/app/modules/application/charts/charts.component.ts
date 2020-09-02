@@ -39,14 +39,14 @@ export class ChartsComponent implements OnInit {
   constructor(private dataService: CovidDataService) {}
 
   fetchChartData(caseClass: string) {
-    console.log('started fetchChartData function with caseClass: ', caseClass);
+    // console.log('started fetchChartData function with caseClass: ', caseClass);
     this.chartDataArray = [];
     this.worldData.forEach((cases) => {
       let country: string;
       let value: number;
       const confirmedThreshold = 500000;
-      const recoveredThreshold = 200000;
-      const deadThreshold = 20000;
+      const recoveredThreshold = 300000;
+      const deadThreshold = 30000;
 
       // Switch case to change between user-selected case class
       switch (caseClass) {
@@ -84,7 +84,7 @@ export class ChartsComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getCountriesArrayData().subscribe({
       next: (result) => {
-        console.log('result: ', result);
+        // console.log('result: ', result);
         this.worldData = result;
         this.fetchChartData('Confirmed');
       },

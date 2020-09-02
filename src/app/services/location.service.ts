@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 
 import { Location } from '../models/location';
 
-const apiUrl = 'https://ipapi.co/json/';
+const apiUrl = 'https://api.ipgeolocationapi.com/geolocate';
 
 @Injectable({
   providedIn: 'root',

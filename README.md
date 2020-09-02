@@ -1,6 +1,6 @@
 # :zap: Angular Data Charts
 
-* This is a world health data monitoring app.
+* This displays Covid data for the user country and worldwide.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -21,11 +21,13 @@
 
 ## :books: General info
 
-* **General:** Add storage for PWA - location then data for charts/countries list, Add translation i18n, . Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
-* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country - **store in storage service**
-* **Countries Page:** table of countries - added flags where missing
-* **News & NewsDetail Pages:** news from user country. Click to go to New Detail Page. **add country detect and select menu.**
-* **Charts Page**pie and column charts using `angular-google-charts`.
+* **General:** Complete storage for charts, Add translation i18n. Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
+* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country
+* **Countries Page:** table of countries
+* **News & NewsDetail Pages:** news from user country. Click to go to New Detail Page. **add country select menu.**
+* **Charts Page**pie and column charts using `angular-google-charts`.**add another chart**
+* **About Page:** TODO
+* **Contact Page:** TODO
 
 ## :camera: Screenshots
 
@@ -46,7 +48,7 @@
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Coronatracker API Document](http://api.coronatracker.com/)
 * [Country Flags API](https://www.countryflags.io)
-* [iPapa API](https://ipapi.co/) to detect user location etc.
+* geolocation API [website](https://ipgeolocationapi.com/) to detect user country etc. Code has not been updated for 2 years and has issues withh CORS.
 
 ## :floppy_disk: Setup
 
@@ -61,10 +63,36 @@
 
 ## :computer: Code Examples
 
-* _tbd_
+* extract from `covid-news.component.ts` to subscribe to news API data and store it in local storage
 
 ```typescript
+// subscribe to news API data observable
+getCovidNews(): void {
+  this.covidDataService.getCovidNews().subscribe((data: NewsItems) => {
+    this.storageService.set("totalNewsItems", data.total);
+    this.storageService.set("storedNewsItems", data.items);
+    this.newsItems = this.storageService.get("storedNewsItems");
+  });
+}
 
+ // create news API observable
+getCovidNews(): Observable<NewsItems> {
+  this.newsArrayLength = 20;
+  this.storageService.set('newsArrayLength', this.newsArrayLength);
+  this.userCountry = this.storageService.get('userCountryData').name;
+  return this.http
+    .get<NewsItems>(
+      apiNewsBaseUrl +
+        `?limit=${this.newsArrayLength}&offset&country=${this.userCountry}`
+    )
+    .pipe(
+      // tap((data: NewsItems) => console.log('news data', data)),
+      map((data: NewsItems) => data),
+      catchError((err) => {
+        return throwError(err);
+      })
+    );
+}
 ```
 
 ## :cool: Features

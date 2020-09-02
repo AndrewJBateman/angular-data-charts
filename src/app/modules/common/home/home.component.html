@@ -5,13 +5,17 @@
   />
 </head>
 
-<div class="container">
+<div class="container" *ngIf="storedGlobalData">
   <h2 class="main-heading" fxHide.lt-md>COVID-19 CORONAVIRUS PANDEMIC DATA</h2>
   <app-home-card
-    [totalConfirmed]="totalConfirmed"
-    [totalRecovered]="totalRecovered"
-    [totalDeaths]="totalDeaths"
-    [date]="date"
+    [worldTotalConfirmed]="storedGlobalData.totalConfirmed"
+    [worldTotalRecovered]="storedGlobalData.totalRecovered"
+    [worldTotalDeaths]="storedGlobalData.totalDeaths"
+    [dataCreatedDate]="storedGlobalData.created"
+    [userCountryTotalConfirmed]="userCountryData.totalConfirmed"
+    [userCountryTotalDeaths]="userCountryData.totalDeaths"
+    [userCountryTotalRecovered]="userCountryData.totalRecovered"
+    [userCountry]="userCountryData.country"
   >
   </app-home-card>
 </div>
