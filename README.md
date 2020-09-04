@@ -21,12 +21,12 @@
 
 ## :books: General info
 
-* **General:** Complete storage for charts, Add translation i18n. Chart data from [Corona API](http://api.coronatracker.com) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
+* **General:** Complete storage for charts, Add translation i18n. Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
 * **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country
-* **Countries Page:** table of countries
-* **News & NewsDetail Pages:** news from user country. Click to go to New Detail Page. **add country select menu.**
-* **Charts Page**pie and column charts using `angular-google-charts`.**add another chart**
-* **About Page:** TODO
+* **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from the Countryflags API.
+* **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras.. **add country select menu.**
+* **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
+* **About Page:** TODO. Mat-cards show details of each page
 * **Contact Page:** TODO
 
 ## :camera: Screenshots

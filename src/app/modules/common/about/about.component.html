@@ -1,1 +1,36 @@
-<p>about works!</p>
+<head>
+  <meta name="description" content="Shows details of app" />
+</head>
+
+<div class="about-container">
+  <h2 class="page-header">
+    <mat-icon class="page-header-icon">coronavirus</mat-icon>App/Page Descriptions
+  </h2>
+
+  <!--mat-card for each page with data-binding from page.module.ts-->
+  <div *ngFor="let page of pages">
+    <mat-card>
+      <mat-card-content>
+        <p class="page-card-title">
+          <mat-icon class="page-card-icon">{{ page.icon }}</mat-icon>
+          {{ page.title }}
+        </p>
+        <p class="page-card-content">{{ page.content }}</p>
+        <p *ngIf="page.website1.length > 0">
+          <span class="small-text">
+            Links:
+            <div fxFlex></div>
+            <a href="{{ page.link1 }}" target="_blank" rel="noopener">
+              {{ page.website1 }}
+            </a>
+            <div fxFlex></div>
+            <a *ngIf="page.website2 && page.website2.length > 0" href="{{ page.link2 }}" target="_blank" rel="noopener">
+              {{ page.website2 }}
+            </a>
+            <div fxFlex></div>
+          </span>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

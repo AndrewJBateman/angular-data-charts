@@ -22,12 +22,16 @@ export class HomeComponent implements OnInit {
     private covidDataService: CovidDataService,
     private locationService: LocationService,
     private storageService: StorageService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.locationService.getLocation().subscribe((data: Location) => {
       this.storageService.set('userCountryData', data);
     });
+  }
+
+  ngOnInit(): void {
+    // this.locationService.getLocation().subscribe((data: Location) => {
+    //   this.storageService.set('userCountryData', data);
+    // });
     this.getGlobalCovidData();
     this.getUserCountryCovidData();
   }
@@ -40,8 +44,10 @@ export class HomeComponent implements OnInit {
   }
 
   getUserCountryCovidData(): void {
-    this.covidDataService.getUserCountryData().subscribe((data: CountriesCount[]) => {
-      this.userCountryData = data[0];
-    });
+    this.covidDataService
+      .getUserCountryData()
+      .subscribe((data: CountriesCount[]) => {
+        this.userCountryData = data[0];
+      });
   }
 }

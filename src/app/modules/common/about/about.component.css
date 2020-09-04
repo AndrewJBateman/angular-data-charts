@@ -1,0 +1,39 @@
+.about-container {
+  margin-top: 16px;
+}
+
+.page-header {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.page-header-icon {
+  color: #008000;
+}
+
+/* page cards */
+mat-card {
+  margin: 10px;
+  padding: 8px;
+}
+
+.page-card-icon {
+  transform: scale(1.5);
+  padding: 4px 4px 0 8px;
+}
+
+.page-card-title {
+  color: #0d47a1;
+  font-size: 20px;
+}
+
+.page-card-content {
+  white-space: pre-wrap;
+  padding: 0 8px;
+}
+
+.small-text {
+  color: #0d47a1;
+  font-size: 14px !important;
+  margin-left: 8px;
+}

@@ -21,7 +21,6 @@ export class CovidCountriesComponent implements OnInit {
   columnNames: string[] = ['country', 'confirmed', 'deaths', 'recovered'];
   dataSource = new MatTableDataSource<CountriesCount>(this.ELEMENT_DATA);
 
-
   constructor(
     private covidDataService: CovidDataService,
     private storageService: StorageService

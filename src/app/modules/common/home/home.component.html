@@ -5,9 +5,9 @@
   />
 </head>
 
-<div class="container" *ngIf="storedGlobalData">
-  <h2 class="main-heading" fxHide.lt-md>COVID-19 CORONAVIRUS PANDEMIC DATA</h2>
-  <app-home-card
+<div class="container">
+  <h2 class="main-heading" fxHide.lt-md>COVID-19 PANDEMIC DATA</h2>
+  <app-home-card *ngIf="storedGlobalData.totalConfirmed"
     [worldTotalConfirmed]="storedGlobalData.totalConfirmed"
     [worldTotalRecovered]="storedGlobalData.totalRecovered"
     [worldTotalDeaths]="storedGlobalData.totalDeaths"
