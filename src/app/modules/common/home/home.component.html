@@ -7,15 +7,16 @@
 
 <div class="container">
   <h2 class="main-heading" fxHide.lt-md>COVID-19 PANDEMIC DATA</h2>
-  <app-home-card *ngIf="storedGlobalData.totalConfirmed"
-    [worldTotalConfirmed]="storedGlobalData.totalConfirmed"
-    [worldTotalRecovered]="storedGlobalData.totalRecovered"
-    [worldTotalDeaths]="storedGlobalData.totalDeaths"
-    [dataCreatedDate]="storedGlobalData.created"
-    [userCountryTotalConfirmed]="userCountryData.totalConfirmed"
-    [userCountryTotalDeaths]="userCountryData.totalDeaths"
-    [userCountryTotalRecovered]="userCountryData.totalRecovered"
-    [userCountry]="userCountryData.country"
+
+  <app-home-card
+    [worldTotalConfirmed]="worldTotalConfirmed"
+    [worldTotalRecovered]="worldTotalRecovered"
+    [worldTotalDeaths]="worldTotalDeaths"
+    [dataCreatedDate]="dataCreatedDate"
+    [userCountryTotalConfirmed]="userCountryTotalConfirmed"
+    [userCountryTotalDeaths]="userCountryTotalDeaths"
+    [userCountryTotalRecovered]="userCountryTotalRecovered"
+    [userCountry]="userCountry"
   >
   </app-home-card>
 </div>

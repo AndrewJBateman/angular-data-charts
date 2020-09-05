@@ -13,8 +13,7 @@
 
 /* page cards */
 mat-card {
-  margin: 10px;
-  padding: 8px;
+  padding: 16px;
 }
 
 .page-card-icon {

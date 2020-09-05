@@ -12,26 +12,29 @@ import { Location } from '../../../models/location';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  userCountry: '';
+  userCountry: string;
   userCountryCode: '';
   language = '';
   storedGlobalData: GlobalCount;
   userCountryData: CountriesCount;
+  worldTotalConfirmed: number;
+  worldTotalRecovered: number;
+  worldTotalDeaths: number;
+  dataCreatedDate: string;
+  userCountryTotalConfirmed: number;
+  userCountryTotalDeaths: number;
+  userCountryTotalRecovered: number;
 
   constructor(
     private covidDataService: CovidDataService,
     private locationService: LocationService,
     private storageService: StorageService
-  ) {
-    this.locationService.getLocation().subscribe((data: Location) => {
-      this.storageService.set('userCountryData', data);
-    });
-  }
+  ) { }
 
   ngOnInit(): void {
-    // this.locationService.getLocation().subscribe((data: Location) => {
-    //   this.storageService.set('userCountryData', data);
-    // });
+    this.locationService.getLocation().subscribe((data: Location) => {
+      this.storageService.set('storedUserCountryData', data);
+    });
     this.getGlobalCovidData();
     this.getUserCountryCovidData();
   }
@@ -39,7 +42,11 @@ export class HomeComponent implements OnInit {
   getGlobalCovidData(): void {
     this.covidDataService.getGlobalData().subscribe((data: GlobalCount) => {
       this.storageService.set('storedGlobalData', data);
-      this.storedGlobalData = this.storageService.get('globalData');
+      this.storedGlobalData = this.storageService.get('storedGlobalData');
+      this.worldTotalConfirmed = this.storedGlobalData.totalConfirmed;
+      this.worldTotalDeaths = this.storedGlobalData.totalDeaths;
+      this.worldTotalRecovered = this.storedGlobalData.totalRecovered;
+      this.dataCreatedDate = this.storedGlobalData.created;
     });
   }
 
@@ -48,6 +55,10 @@ export class HomeComponent implements OnInit {
       .getUserCountryData()
       .subscribe((data: CountriesCount[]) => {
         this.userCountryData = data[0];
+        this.userCountry = this.userCountryData.country;
+        this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
+        this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
+        this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
       });
   }
 }

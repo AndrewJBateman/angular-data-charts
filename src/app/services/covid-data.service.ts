@@ -5,6 +5,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 
 import { StorageService } from '../services/localstorage.service';
 import { GlobalCount, CountriesCount, NewsItems } from '../models/covid';
+import { Location } from '../models/location';
 
 const apiBaseUrl = 'http://api.coronatracker.com/v3/stats/worldometer/';
 const apiNewsBaseUrl = 'http://api.coronatracker.com/news/trending';
@@ -14,7 +15,8 @@ const apiNewsBaseUrl = 'http://api.coronatracker.com/news/trending';
 })
 export class CovidDataService {
   storedCountryData: CountriesCount[];
-  userCountryCode: '';
+  userCountryData: Location;
+  userCountryCode: string;
   userCountry: '';
   newsArrayLength: number;
 
@@ -34,7 +36,8 @@ export class CovidDataService {
   }
 
   getUserCountryData(): Observable<CountriesCount[]> {
-    this.userCountryCode = this.storageService.get('userCountryData')["alpha2"];
+    this.userCountryData = this.storageService.get('storedUserCountryData');
+    this.userCountryCode = this.userCountryData["country_code"];
     return this.http
       .get<CountriesCount[]>(
         apiBaseUrl + 'country?countryCode=' + this.userCountryCode
@@ -62,14 +65,14 @@ export class CovidDataService {
   getCovidNews(): Observable<NewsItems> {
     this.newsArrayLength = 20;
     this.storageService.set('newsArrayLength', this.newsArrayLength);
-    this.userCountry = this.storageService.get('userCountryData').name;
+    this.userCountry = this.storageService.get('storedUserCountryData').country_name;
     return this.http
       .get<NewsItems>(
         apiNewsBaseUrl +
           `?limit=${this.newsArrayLength}&offset&country=${this.userCountry}`
       )
       .pipe(
-        // tap((data: NewsItems) => console.log('news data', data)),
+        tap((data: NewsItems) => console.log('news data', data)),
         map((data: NewsItems) => data),
         catchError((err) => {
           return throwError(err);

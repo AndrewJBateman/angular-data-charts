@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 
 import { Location } from '../models/location';
 
-const apiUrl = 'https://api.ipgeolocationapi.com/geolocate';
+const apiUrl = 'https://ipapi.co/json/';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +15,10 @@ export class LocationService {
 
   getLocation(): Observable<Location> {
     return this.http.get<Location>(apiUrl).pipe(
+      // tap((data: Location) => console.log('data: ', data.country_name)),
       map((data: Location) => data),
       catchError((err) => {
-        return throwError('Location not found, error: ', err);
+        return throwError('Location data not found, error: ', err);
       })
     );
   }
