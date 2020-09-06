@@ -7,14 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-card.component.css'],
 })
 export class HomeCardComponent implements OnInit {
+  // global data inputs
   @Input('worldTotalConfirmed')
   worldTotalConfirmed: number;
-  @Input('worldTotalRecovered')
-  worldTotalRecovered: number;
   @Input('worldTotalDeaths')
   worldTotalDeaths: number;
+  @Input('worldTotalRecovered')
+  worldTotalRecovered: number;
+  @Input('worldTotalConfirmedPerMillion')
+  worldTotalConfirmedPerMillion: number;
   @Input('dataCreatedDate')
   date: string;
+
+  // user country data inputs
   @Input('userCountry')
   userCountry: string;
   @Input('userCountryTotalConfirmed')
@@ -23,6 +28,8 @@ export class HomeCardComponent implements OnInit {
   userCountryTotalDeaths: number;
   @Input('userCountryTotalRecovered')
   userCountryTotalRecovered: number;
+  @Input('userCountryTotalConfirmedPerMillion')
+  userCountryConfirmedPerMillion: number;
 
   constructor(private router: Router) {}
 

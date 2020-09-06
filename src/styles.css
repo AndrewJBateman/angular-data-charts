@@ -10,11 +10,15 @@ body {
 
 .main-container {
   padding-top: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .main-heading {
   text-align: center;
-  color: #455a64;
+  color: #0d47a1;
+  margin: 0 0 8px;
 }
 
 .mat-card-header-text {

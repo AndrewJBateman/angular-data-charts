@@ -1,27 +1,41 @@
 <mat-card class="mat-elevation-z1">
   <!-- <img src="../../../../assets/covid.jpg" class="mat-card-image" /> -->
   <mat-card-content>
-    <!-- <h3 class="title-style">Worldwide Covid-19 Cases</h3> -->
     <table class="table-style">
       <tr>
-        <td class="card-left-header">Cases</td>
+        <td class="card-left-header">Total Cases</td>
         <td class="card-right-header">World</td>
         <td class="card-right-header">{{ userCountry }}</td>
       </tr>
       <tr>
         <td>Confirmed:</td>
         <td class="highlight-text blue">{{ worldTotalConfirmed | number }}</td>
-        <td class="highlight-text blue">{{ userCountryTotalConfirmed | number }}</td>
+        <td class="highlight-text blue">
+          {{ userCountryTotalConfirmed | number }}
+        </td>
       </tr>
       <tr>
         <td>Deaths:</td>
         <td class="highlight-text red">{{ worldTotalDeaths | number }}</td>
-        <td class="highlight-text red">{{ userCountryTotalDeaths | number }}</td>
+        <td class="highlight-text red">
+          {{ userCountryTotalDeaths | number }}
+        </td>
       </tr>
       <tr>
         <td>Recovered:</td>
         <td class="highlight-text green">{{ worldTotalRecovered | number }}</td>
-        <td class="highlight-text green">{{ userCountryTotalRecovered | number }}</td>
+        <td class="highlight-text green">
+          {{ userCountryTotalRecovered | number }}
+        </td>
+      </tr>
+      <tr>
+        <td>Confirmed/million:</td>
+        <td class="highlight-text blue">
+          {{ worldTotalConfirmedPerMillion | number }}
+        </td>
+        <td class="highlight-text blue">
+          {{ userCountryConfirmedPerMillion | number }}
+        </td>
       </tr>
     </table>
   </mat-card-content>

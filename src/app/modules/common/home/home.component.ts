@@ -15,21 +15,27 @@ export class HomeComponent implements OnInit {
   userCountry: string;
   userCountryCode: '';
   language = '';
-  storedGlobalData: GlobalCount;
+  globalData: GlobalCount;
   userCountryData: CountriesCount;
   worldTotalConfirmed: number;
   worldTotalRecovered: number;
   worldTotalDeaths: number;
-  dataCreatedDate: string;
+  worldTotalConfirmedPerMillion: number;
+  worldNewCases: number;
+  worldNewDeaths: number;
   userCountryTotalConfirmed: number;
-  userCountryTotalDeaths: number;
   userCountryTotalRecovered: number;
+  userCountryTotalDeaths: number;
+  userCountryTotalConfirmedPerMillion: number;
+  userCountryNewCases: number;
+  userCountryNewDeaths: number;
+  dataCreatedDate: string;
 
   constructor(
     private covidDataService: CovidDataService,
     private locationService: LocationService,
     private storageService: StorageService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.locationService.getLocation().subscribe((data: Location) => {
@@ -41,12 +47,13 @@ export class HomeComponent implements OnInit {
 
   getGlobalCovidData(): void {
     this.covidDataService.getGlobalData().subscribe((data: GlobalCount) => {
-      this.storageService.set('storedGlobalData', data);
-      this.storedGlobalData = this.storageService.get('storedGlobalData');
-      this.worldTotalConfirmed = this.storedGlobalData.totalConfirmed;
-      this.worldTotalDeaths = this.storedGlobalData.totalDeaths;
-      this.worldTotalRecovered = this.storedGlobalData.totalRecovered;
-      this.dataCreatedDate = this.storedGlobalData.created;
+      this.storageService.set('storedGlobalCovidData', data);
+      this.globalData = this.storageService.get('storedGlobalCovidData');
+      this.worldTotalConfirmed = this.globalData.totalConfirmed;
+      this.worldTotalDeaths = this.globalData.totalDeaths;
+      this.worldTotalRecovered = this.globalData.totalRecovered;
+      this.worldTotalConfirmedPerMillion = this.globalData.totalCasesPerMillionPop;
+      this.dataCreatedDate = this.globalData.created;
     });
   }
 
@@ -54,11 +61,15 @@ export class HomeComponent implements OnInit {
     this.covidDataService
       .getUserCountryData()
       .subscribe((data: CountriesCount[]) => {
-        this.userCountryData = data[0];
+        this.storageService.set('storedUserCountryCovidData', data[0]);
+        this.userCountryData = this.storageService.get(
+          'storedUserCountryCovidData'
+        );
         this.userCountry = this.userCountryData.country;
         this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
-        this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
         this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
+        this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
+        this.userCountryTotalConfirmedPerMillion = this.userCountryData.totalConfirmedPerMillionPopulation;
       });
   }
 }

@@ -72,7 +72,7 @@ export class CovidDataService {
           `?limit=${this.newsArrayLength}&offset&country=${this.userCountry}`
       )
       .pipe(
-        tap((data: NewsItems) => console.log('news data', data)),
+        // tap((data: NewsItems) => console.log('news data', data)),
         map((data: NewsItems) => data),
         catchError((err) => {
           return throwError(err);
