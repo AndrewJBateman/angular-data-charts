@@ -7,7 +7,8 @@
 
 <div class="main-container">
   <div class="top-section">
-    <h2 class="main-heading" fxHide.lt-md>Google Charts Covid Data</h2>
+    <h2 class="main-heading" fxHide.lt-md><mat-icon class="page-header-icon">analytics</mat-icon
+      >Google Charts Covid Data</h2>
 
     <h2 id="cases-radio-group-label">Select Data Class</h2>
     <mat-radio-group
@@ -19,7 +20,7 @@
         class="cases-radio-button"
         *ngFor="let caseClass of caseClasses"
         [value]="caseClass"
-        (click)="fetchChartData(caseClass)"
+        (click)="getChartData(caseClass)"
         aria-label="radio button select coronavirus type {{ caseClass }}"
       >
         {{ caseClass }}

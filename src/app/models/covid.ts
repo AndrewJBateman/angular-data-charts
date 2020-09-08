@@ -38,17 +38,17 @@ export interface NewsItems {
 }
 
 export interface NewsItem {
-  nid?:         number;
-  title?:       string;
+  nid?: number;
+  title?: string;
   description?: string;
-  content?:     string;
-  author?:      string;
-  url?:         string;
-  urlToImage?:  string;
+  content?: string;
+  author?: string;
+  url?: string;
+  urlToImage?: string;
   publishedAt?: Date;
-  addedOn?:     Date;
-  siteName?:    string;
-  language?:    string;
+  addedOn?: Date;
+  siteName?: string;
+  language?: string;
   countryCode?: number;
-  status?:      number;
+  status?: number;
 }

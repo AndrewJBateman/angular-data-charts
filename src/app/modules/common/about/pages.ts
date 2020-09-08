@@ -4,7 +4,7 @@ export const PAGES: Page[] = [
   {
     title: 'App',
     icon: 'devices',
-    content: 'Built using the Angular framework v10 with Angular Material Design components. There is a top menu for desktop/tablet screens and a burger icon-activated side menu for phone screens. The RxJS reactive programming library is used to handle datastreams and propagation of change using observables',
+    content: 'This app was built in Angular v10 with Angular Material Design components/icons. There is a top menu for desktop/tablet screens and a burger icon-activated side menu for phone screens. The RxJS reactive programming library is used to handle datastreams and propagation of change using observables',
     website1: 'Angular',
     link1: 'https://angular.io/',
     website2: 'Angular Material',
@@ -13,7 +13,7 @@ export const PAGES: Page[] = [
   {
     title: 'Home',
     icon: 'home',
-    content: 'Global data for Covid-19 cases is fetched from a coronatracker API, set in local storage then displayed on Mat-cards. The Apapi API is used to determine the user country and Covid-19 cases are also shown from that country.',
+    content: 'Global data for Covid-19 cases is fetched from a coronatracker API, set in local storage then displayed on a Mat-card. The Apapi API is used to determine the user country and Covid-19 cases are also shown from that country. Global Covid-19 cases are shown on a chart using the angular-google-charts module',
     website1: 'coronatracker API',
     link1: 'https://api.coronatracker.com',
     website2: 'Apapi API',
@@ -40,7 +40,7 @@ export const PAGES: Page[] = [
   {
     title: 'Charts',
     icon: 'analytics',
-    content: `Global Covid case data is displayed by country using the Angular-Google-Charts npm module with thresholds set to limit the data to make the charts more readable`,
+    content: `Global Covid case data is displayed by country using the Angular-Google-Charts npm module with thresholds set to limit the data to make the charts more readable. A radio button group allows the user to choose which class of data is displayed; confirmed, recovered or dead`,
     website1: 'Angular Google Charts',
     link1: 'https://www.npmjs.com/package/angular-google-charts'
   }

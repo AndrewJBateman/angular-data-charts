@@ -21,11 +21,22 @@ body {
   margin: 0 0 8px;
 }
 
+.page-header {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.page-header-icon {
+  transform: scale(1.5);
+  color: #2e7d32;
+  padding-right: 8px;
+}
+
 .mat-card-header-text {
   width: 100% !important;
 }
 
 .horiz-line {
   margin: 8px;
-  border: 1px solid #008000;
+  border: 1px solid #2e7d32;
 }

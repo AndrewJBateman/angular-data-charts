@@ -1,19 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { CovidDataService } from '../../../services/covid-data.service';
-import { CountriesCount } from '../../../models/covid';
-import { StorageService } from '../../../services/localstorage.service';
+import { StorageService } from '../services/localstorage.service';
+import { CountriesCount } from '../models/covid';
 
-@Component({
-  selector: 'app-charts',
-  templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css'],
+@Injectable({
+  providedIn: 'root'
 })
-export class ChartsComponent implements OnInit {
-  // radio button chart data class setup
-  caseClasses: string[] = ['Confirmed', 'Recovered', 'Dead'];
-  caseClass: string;
-  selectedClass = 'Confirmed';
+export class ChartService {
 
   // chart data setup
   chartDataArray = [];
@@ -21,34 +14,17 @@ export class ChartsComponent implements OnInit {
   title = '';
   columnNames = ['Country', 'Cases'];
 
-  // angular-charts setup
-  chart = {
-    PieChart: 'PieChart',
-    ColumnChart: 'ColumnChart',
-    height: 400,
-    options: {
-      animation: {
-        duration: 500,
-        easing: 'out',
-      },
-      is3D: true,
-    },
-  };
-
-  countries: CountriesCount[];
-  constructor(
-    private dataService: CovidDataService,
-    private storageService: StorageService
-  ) {}
+  constructor(private storageService: StorageService) { }
 
   getChartData(caseClass: string) {
     // console.log('started getChartData function with caseClass: ', caseClass);
+    this.worldData = this.storageService.get('storedCountriesArrayData');
     this.chartDataArray = [];
     this.worldData.forEach((cases) => {
       let country: string;
       let value: number;
-      const confirmedThreshold = 600000;
-      const recoveredThreshold = 400000;
+      const confirmedThreshold = 500000;
+      const recoveredThreshold = 300000;
       const deadThreshold = 30000;
 
       // Switch case to change between user-selected case class
@@ -80,18 +56,7 @@ export class ChartsComponent implements OnInit {
 
       if (country && value) {
         this.chartDataArray.push([country, value]);
-        this.storageService.set("chartDataArray", this.chartDataArray);
       }
-    });
-  }
-
-  ngOnInit(): void {
-    this.dataService.getCountriesArrayData().subscribe({
-      next: (result) => {
-        this.storageService.set('storedCountriesArrayData', result);
-        this.worldData = this.storageService.get('storedCountriesArrayData');
-        this.getChartData('Confirmed');
-      },
     });
   }
 }

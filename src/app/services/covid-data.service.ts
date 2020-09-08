@@ -4,7 +4,11 @@ import { throwError, Observable } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import { StorageService } from '../services/localstorage.service';
-import { GlobalCount, CountriesCount, NewsItems } from '../models/covid';
+import {
+  GlobalCount,
+  CountriesCount,
+  NewsItems,
+} from '../models/covid';
 import { Location } from '../models/location';
 
 const apiBaseUrl = 'http://api.coronatracker.com/v3/stats/worldometer/';
@@ -37,7 +41,7 @@ export class CovidDataService {
 
   getUserCountryData(): Observable<CountriesCount[]> {
     this.userCountryData = this.storageService.get('storedUserCountryData');
-    this.userCountryCode = this.userCountryData["country_code"];
+    this.userCountryCode = this.userCountryData['country_code'];
     return this.http
       .get<CountriesCount[]>(
         apiBaseUrl + 'country?countryCode=' + this.userCountryCode
@@ -65,7 +69,9 @@ export class CovidDataService {
   getCovidNews(): Observable<NewsItems> {
     this.newsArrayLength = 20;
     this.storageService.set('newsArrayLength', this.newsArrayLength);
-    this.userCountry = this.storageService.get('storedUserCountryData').country_name;
+    this.userCountry = this.storageService.get(
+      'storedUserCountryData'
+    ).country_name;
     return this.http
       .get<NewsItems>(
         apiNewsBaseUrl +

@@ -8,6 +8,20 @@
   font-size: 14px;
 }
 
+/* .top-nav-header {
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+} */
+
+.top-nav-text {
+  margin: auto;
+  /* margin-bottom: 16px; */
+}
+
+.top-nav-icon {
+padding-right: 8px;
+}
+
 .top-nav-date {
   font-size: 14px;
 }
@@ -48,8 +62,4 @@
 
 .side-nav-icon {
   padding-right: 4px;
-}
-
-.top-nav-text {
-  margin: auto;
 }

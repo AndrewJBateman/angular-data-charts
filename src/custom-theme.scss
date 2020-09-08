@@ -1,12 +1,8 @@
 @import '~@angular/material/theming';
 
 @include mat-core();
-$angular-data-charts-warn: mat-palette($mat-red);
-$angular-data-charts-theme: mat-light-theme((
-  color: (
-    primary: mat-palette($mat-blue-grey, 700),
-    accent: mat-palette($mat-blue, 900),
-  )
-));
-
-@include angular-material-theme($angular-data-charts-theme);
+$custom-theme-primary: mat-palette($mat-blue-grey, 700);
+$custom-theme-accent: mat-palette($mat-blue, 900);
+$custom-theme-warn: mat-palette($mat-green, 800);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);

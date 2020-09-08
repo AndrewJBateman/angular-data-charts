@@ -40,6 +40,7 @@
 * [Angular Material v10](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
+* [material design colors](https://www.materialpalette.com/colors) palette
 * [Angular Google Charts](https://www.npmjs.com/package/angular-google-charts) wrapper for the Google Charts library
 * [Dayjs v1](https://github.com/iamkun/dayjs) to convert Github UTC Timestamp to '... ago'
 * [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables

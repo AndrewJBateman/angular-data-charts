@@ -9,8 +9,8 @@
   <!--Heading - only show on tablet or larger screens-->
   <div>
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
-      <h2 class="main-heading">
-        <mat-icon color="accent">coronavirus</mat-icon>
+      <h2 class="page-header">
+        <mat-icon class="page-header-icon">coronavirus</mat-icon>
         Covid-19 - Worldwide Cases
       </h2>
     </div>
@@ -25,9 +25,7 @@
       [userCountryTotalConfirmed]="userCountryTotalConfirmed"
       [userCountryTotalRecovered]="userCountryTotalRecovered"
       [userCountryTotalDeaths]="userCountryTotalDeaths"
-      [userCountryTotalConfirmedPerMillion]="
-        userCountryTotalConfirmedPerMillion
-      "
+      [userCountryTotalConfirmedPerMillion]="userCountryTotalConfirmedPerMillion"
       [dataCreatedDate]="dataCreatedDate"
     >
     </app-home-card>

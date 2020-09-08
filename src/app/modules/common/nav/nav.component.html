@@ -1,4 +1,4 @@
-<div style="height: 100vh;">
+<div style="height: 100vh">
   <!-- Top Navbar sticks to top of screen -->
   <mat-toolbar color="primary" sticky>
     <button
@@ -28,7 +28,7 @@
           [routerLink]="['/home']"
           routerLinkActive="top-link-active"
         >
-          <h2>Home</h2>
+          <h2 class="top-nav-header"><mat-icon class="top-nav-icon">home</mat-icon>Home</h2>
         </a>
       </div>
       <!-- <a
@@ -44,7 +44,7 @@
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-          Covid Cases<span class="top-nav-date">
+        <mat-icon class="top-nav-icon">coronavirus</mat-icon>Covid Cases<span class="top-nav-date">
             <mat-icon class="top-nav-title-icon">today</mat-icon
             >{{ todaysDate | date }}
           </span>
@@ -56,7 +56,7 @@
           [routerLink]="['/covid-news']"
           routerLinkActive="top-link-active"
         >
-          Covid News ({{ totalNewsItems }} Items)
+        <mat-icon class="top-nav-icon">article</mat-icon>Covid News ({{ totalNewsItems }} Items)
         </a>
       </div>
       <div *ngIf="isNewsDetailRoute()">
@@ -78,7 +78,8 @@
           [routerLink]="['/charts']"
           routerLinkActive="top-link-active"
         >
-          Charts<span class="top-nav-date">
+        <mat-icon class="top-nav-icon">analytics</mat-icon
+          >Charts<span class="top-nav-date">
             <mat-icon class="top-nav-title-icon" class="top-nav-title-icon"
               >today</mat-icon
             >{{ todaysDate | date }}
@@ -91,7 +92,8 @@
           [routerLink]="['/about']"
           routerLinkActive="top-link-active"
         >
-          About App
+          <mat-icon class="top-nav-icon">coronavirus</mat-icon>App/Page
+          Descriptions
         </a>
       </div>
       <div *ngIf="isContactRoute()">
@@ -100,7 +102,8 @@
           [routerLink]="['/contact']"
           routerLinkActive="top-link-active"
         >
-          Contact Details
+          <mat-icon class="top-nav-icon">contact_mail</mat-icon>Author
+          Github/Contact
         </a>
       </div>
     </div>
@@ -228,7 +231,7 @@
           routerLinkActive="side-link-active"
           (click)="sidenav.toggle()"
         >
-          <mat-icon class="side-nav-icon">email</mat-icon>Contact
+          <mat-icon class="side-nav-icon">contact_mail</mat-icon>Contact
         </a>
         <a
           mat-list-item

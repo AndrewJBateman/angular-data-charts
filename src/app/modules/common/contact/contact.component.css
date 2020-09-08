@@ -1,0 +1,53 @@
+.contact-card {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 16px;
+}
+
+.card-header {
+  padding-bottom: 16px;
+}
+
+.card-header-icon {
+  transform: scale(1.2);
+  padding-right: 4px;
+}
+
+.card-header-image {
+  background-image: url('https://avatars2.githubusercontent.com/u/27190679?v=4');
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.card-subtitle {
+  color: #0d47a1;
+}
+
+.card-content-icon {
+  transform: scale(1.5);
+  padding-right: 8px;
+  padding-left: 4px;
+}
+
+.card-text-bold {
+  /* font-weight: bold; */
+  padding-right: 8px;
+  color: #0d47a1;
+}
+
+mat-card-actions {
+  /* margin: auto; */
+  padding: 8px !important;
+  flex: 1 1 auto;
+}
+
+.card-footer-button {
+  margin: 0 !important;
+}
+
+.card-footer-icon {
+  padding-right: 4px;
+}

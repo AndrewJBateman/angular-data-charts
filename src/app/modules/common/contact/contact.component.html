@@ -1,1 +1,74 @@
-<p>contact works!</p>
+<head>
+  <meta name="description" content="Shows contact details of author" />
+</head>
+
+<div class="main-container">
+  <h2 class="page-header" fxHide.lt-md>
+    <mat-icon class="page-header-icon">contact_mail</mat-icon>Author
+    Github/Contact
+  </h2>
+  <mat-card class="contact-card mat-elevation-z4" *ngIf="user">
+    <mat-card-header class="card-header">
+      <div
+        mat-card-avatar
+        class="card-header-image"
+        alt="Github user profile photo"
+      ></div>
+      <mat-card-title
+        ><mat-icon class="card-header-icon" color="accent">person_pin</mat-icon
+        >{{ user.name }}</mat-card-title
+      >
+      <mat-card-subtitle
+        ><h4 class="card-subtitle">
+          <mat-icon class="card-header-icon" color="accent">explore</mat-icon
+          >{{ user.location }}
+        </h4></mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-icon class="card-content-icon" color="accent">person_pin</mat-icon
+        ><span class="card-text-bold">Bio:</span>{{ user.bio }}
+      </p>
+      <p>
+        <mat-icon class="card-content-icon" color="accent">source</mat-icon
+        ><span class="card-text-bold">Github repositories:</span
+        >{{ user.public_repos }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <a
+        class="card-footer-button"
+        mat-raised-button
+        color="primary"
+        href="https://github.com/AndrewJBateman"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Link to author Github"
+        ><mat-icon class="card-footer-icon">link</mat-icon>Github
+      </a>
+      <div fxFlex></div>
+      <a
+        class="card-footer-button"
+        mat-raised-button
+        color="accent"
+        href="https://andrewbateman.org/contact"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Link to author website contact page"
+        ><mat-icon class="card-footer-icon">send</mat-icon>Contact
+      </a>
+      <div fxFlex></div>
+      <a
+        class="card-footer-button"
+        mat-raised-button
+        color="warn"
+        href="https://andrewbateman.org"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Link to author website"
+        ><mat-icon class="card-footer-icon">account_circle</mat-icon>My Site
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
