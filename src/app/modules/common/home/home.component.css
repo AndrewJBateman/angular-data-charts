@@ -1,5 +1,10 @@
 .home-card-style {
   max-width: 400px;
+  margin: 0 auto 8px;
+}
+
+.home-tabs-style {
+  max-width: 400px;
   margin: auto;
 }
 

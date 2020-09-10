@@ -15,6 +15,7 @@
       </h2>
     </div>
   </div>
+  <!--Cases info: worldwide & user country-->
   <div class="home-card-style">
     <app-home-card
       [userCountry]="userCountry"
@@ -25,9 +26,45 @@
       [userCountryTotalConfirmed]="userCountryTotalConfirmed"
       [userCountryTotalRecovered]="userCountryTotalRecovered"
       [userCountryTotalDeaths]="userCountryTotalDeaths"
-      [userCountryTotalConfirmedPerMillion]="userCountryTotalConfirmedPerMillion"
+      [userCountryTotalConfirmedPerMillion]="
+        userCountryTotalConfirmedPerMillion
+      "
       [dataCreatedDate]="dataCreatedDate"
     >
     </app-home-card>
+  </div>
+  <!--Tab group of charts-->
+  <div class="home-tabs-style">
+    <mat-card>
+      <mat-tab-group>
+        <mat-tab label="Confirmed">
+          <google-chart
+            [type]="chart.PieChart"
+            [data]="deadChartDataArray"
+            [options]="chart.options"
+            [title]="confirmedTitle"
+            [height]="chart.height"
+          ></google-chart
+        ></mat-tab>
+        <mat-tab label="Dead">
+          <google-chart
+            [type]="chart.PieChart"
+            [data]="deadChartDataArray"
+            [options]="chart.options"
+            [title]="deadTitle"
+            [height]="chart.height"
+          ></google-chart
+        ></mat-tab>
+        <mat-tab label="Recovered">
+          <google-chart
+            [type]="chart.PieChart"
+            [data]="recoveredChartDataArray"
+            [options]="chart.options"
+            [title]="recoveredTitle"
+            [height]="chart.height"
+          ></google-chart
+        ></mat-tab>
+      </mat-tab-group>
+    </mat-card>
   </div>
 </div>

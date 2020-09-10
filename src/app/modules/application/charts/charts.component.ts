@@ -80,7 +80,7 @@ export class ChartsComponent implements OnInit {
 
       if (country && value) {
         this.chartDataArray.push([country, value]);
-        this.storageService.set("chartDataArray", this.chartDataArray);
+        // this.storageService.set("chartDataArray", this.chartDataArray);
       }
     });
   }

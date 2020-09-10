@@ -41,7 +41,7 @@ export class CovidDataService {
 
   getUserCountryData(): Observable<CountriesCount[]> {
     this.userCountryData = this.storageService.get('storedUserCountryData');
-    this.userCountryCode = this.userCountryData['country_code'];
+    this.userCountryCode = this.userCountryData.country_code;
     return this.http
       .get<CountriesCount[]>(
         apiBaseUrl + 'country?countryCode=' + this.userCountryCode
