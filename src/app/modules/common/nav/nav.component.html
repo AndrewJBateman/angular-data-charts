@@ -9,7 +9,8 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <!-- <div fxHide.lt-sm="true"> -->
+
+    <!--show 'Home' in top left nav bar when phone/tablet-sized screen-->
     <div fxHide.lt-md="true">
       <a
         class="top-nav-link"
@@ -21,30 +22,29 @@
         <h2>Home</h2>
       </a>
     </div>
+
+    <!--show page title info in nav bar on phone/tablet sized screens-->
     <div fxHide.gt-sm="true">
-      <div *ngIf="isHomeRoute()" class="top-nav-text">
+      <div *ngIf="isHomeRoute()">
         <a
-          aria-label="covid news nav link active"
+          aria-label="home nav link active"
           [routerLink]="['/home']"
           routerLinkActive="top-link-active"
         >
-          <h2 class="top-nav-header"><mat-icon class="top-nav-icon">home</mat-icon>Home</h2>
+          <mat-icon class="top-nav-icon">home</mat-icon>Home
         </a>
       </div>
-      <!-- <a
-        (click)="returnToList()"
-        class="btn btn-outline-primary"
-        ><mat-icon>arrow_back</mat-icon></a
-      > -->
 
       <!--page titles that appear in nav-bar in active color only when page is active-->
       <div *ngIf="isCountriesRoute()">
         <a
-          aria-label="covid news nav link active"
+          aria-label="countries nav link active"
           [routerLink]="['/covid-countries']"
           routerLinkActive="top-link-active"
         >
-        <mat-icon class="top-nav-icon">coronavirus</mat-icon>Covid Cases<span class="top-nav-date">
+          <mat-icon class="top-nav-icon">coronavirus</mat-icon>Covid Cases<span
+            class="top-nav-date"
+          >
             <mat-icon class="top-nav-title-icon">today</mat-icon
             >{{ todaysDate | date }}
           </span>
@@ -56,7 +56,10 @@
           [routerLink]="['/covid-news']"
           routerLinkActive="top-link-active"
         >
-        <mat-icon class="top-nav-icon">article</mat-icon>Covid News ({{ totalNewsItems }} Items)
+          <mat-icon class="top-nav-icon">article</mat-icon>Covid News ({{
+            totalNewsItems
+          }}
+          Items)
         </a>
       </div>
       <div *ngIf="isNewsDetailRoute()">
@@ -78,8 +81,9 @@
           [routerLink]="['/charts']"
           routerLinkActive="top-link-active"
         >
-        <mat-icon class="top-nav-icon">analytics</mat-icon
-          >Charts<span class="top-nav-date">
+          <mat-icon class="top-nav-icon">analytics</mat-icon>Charts<span
+            class="top-nav-date"
+          >
             <mat-icon class="top-nav-title-icon" class="top-nav-title-icon"
               >today</mat-icon
             >{{ todaysDate | date }}
@@ -88,7 +92,7 @@
       </div>
       <div *ngIf="isAboutRoute()">
         <a
-          aria-label="covid news nav link active"
+          aria-label="about nav link active"
           [routerLink]="['/about']"
           routerLinkActive="top-link-active"
         >
@@ -98,7 +102,7 @@
       </div>
       <div *ngIf="isContactRoute()">
         <a
-          aria-label="covid news nav link active"
+          aria-label="contact nav link active"
           [routerLink]="['/contact']"
           routerLinkActive="top-link-active"
         >

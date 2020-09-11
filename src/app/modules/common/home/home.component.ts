@@ -32,18 +32,14 @@ export class HomeComponent implements OnInit {
   dataCreatedDate: string;
 
   // chart data setup
-  confirmedChartDataArray = [];
-  deadChartDataArray = [];
-  recoveredChartDataArray = [];
+  chartDataArray = [];
   worldData: CountriesCount[];
-  confirmedTitle = '';
-  deadTitle = '';
-  recoveredTitle = '';
+  title = '';
 
   // angular-charts setup
   chart = {
-    PieChart: 'PieChart',
-    height: 250,
+    type: 'PieChart',
+    // height: 300,
     options: {
       animation: {
         duration: 500,
@@ -59,46 +55,58 @@ export class HomeComponent implements OnInit {
     private storageService: StorageService
   ) {}
 
-  getChartData() {
-    console.log('started getChartData function');
-    this.confirmedChartDataArray = [];
-    this.deadChartDataArray = [];
-    this.recoveredChartDataArray = [];
+  // test(a){
+  //   console.log('a.index: ', a.index);
+  // }
+
+  // function to push chart data into an arrays using a forEach loop
+  // index of mat-tab-group used in switch case to choose class of data
+  getChartData(tab: { index: number; tab?: string }) {
+    let tabNumber = tab.index;
+    this.chartDataArray = [];
     this.worldData.forEach((cases) => {
       let country: string;
-      let confirmedValue: number;
-      let deadValue: number;
-      let recoveredValue: number;
-      const confirmedThreshold = 300000;
+      let value: number;
+      const confirmedThreshold = 500000;
+      const recoveredThreshold = 400000;
       const deadThreshold = 30000;
-      const recoveredThreshold = 300000;
 
-      country = cases.country;
-      this.confirmedTitle = `Countries with >${confirmedThreshold} confirmed cases`;
-      this.deadTitle = `Countries with >${deadThreshold} deaths`;
-      this.recoveredTitle = `Countries with >${recoveredThreshold} recovered`;
+      // Switch case to change between user-selected case class
+      switch (tabNumber) {
+        case 0:
+          if (cases.totalConfirmed > confirmedThreshold) {
+            country = cases.country;
+            value = cases.totalConfirmed;
+          }
+          this.title = `Countries with >${confirmedThreshold} confirmed cases`;
+          break;
 
-      if (cases.totalConfirmed > confirmedThreshold) {
-        confirmedValue = cases.totalConfirmed;
-      }
-      if (cases.totalDeaths > deadThreshold) {
-        deadValue = cases.totalDeaths;
-      }
-      if (cases.totalRecovered > recoveredThreshold) {
-        recoveredValue = cases.totalRecovered;
+        case 1:
+          if (cases.totalRecovered > recoveredThreshold) {
+            country = cases.country;
+            value = cases.totalRecovered;
+          }
+          this.title = `Countries with >${recoveredThreshold} recovered cases`;
+          break;
+
+        case 2:
+          if (cases.totalDeaths > deadThreshold) {
+            country = cases.country;
+            value = cases.totalDeaths;
+          }
+          this.title = `Countries with >${deadThreshold} deaths`;
+          break;
       }
 
-      if (country && confirmedValue && deadValue && recoveredValue) {
-        this.confirmedChartDataArray.push([country, confirmedValue]);
-        this.deadChartDataArray.push([country, deadValue]);
-        this.recoveredChartDataArray.push([country, recoveredValue]);
-        // this.storageService.set('confirmedChartDataArray', this.confirmedChartDataArray);
-        // this.storageService.set('deadChartDataArray', this.deadChartDataArray);
-        // this.storageService.set('recoveredChartDataArray', this.recoveredChartDataArray);
+      if (country && value) {
+        this.chartDataArray.push([country, value]);
       }
     });
   }
 
+  // on initialisation get user location, global & user country total covid figures
+  // get covid data for all world countries using data service then
+  // store this data in local storage the access it & run function to get chart data
   ngOnInit(): void {
     this.locationService.getLocation().subscribe((data: Location) => {
       this.storageService.set('storedUserCountryData', data);
@@ -110,8 +118,7 @@ export class HomeComponent implements OnInit {
       next: (result) => {
         this.storageService.set('storedCountriesArrayData', result);
         this.worldData = this.storageService.get('storedCountriesArrayData');
-        // console.log('worldData: ', this.worldData);
-        this.getChartData();
+        this.getChartData({ index: 0 });
       },
     });
   }

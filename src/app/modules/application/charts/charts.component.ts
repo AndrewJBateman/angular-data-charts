@@ -42,7 +42,6 @@ export class ChartsComponent implements OnInit {
   ) {}
 
   getChartData(caseClass: string) {
-    // console.log('started getChartData function with caseClass: ', caseClass);
     this.chartDataArray = [];
     this.worldData.forEach((cases) => {
       let country: string;
@@ -80,7 +79,6 @@ export class ChartsComponent implements OnInit {
 
       if (country && value) {
         this.chartDataArray.push([country, value]);
-        // this.storageService.set("chartDataArray", this.chartDataArray);
       }
     });
   }

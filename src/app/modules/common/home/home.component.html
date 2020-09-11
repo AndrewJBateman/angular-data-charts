@@ -35,33 +35,35 @@
   </div>
   <!--Tab group of charts-->
   <div class="home-tabs-style">
-    <mat-card>
-      <mat-tab-group>
+    <mat-card *ngIf="chartDataArray[0]">
+      <mat-tab-group (selectedTabChange)="getChartData($event)">
         <mat-tab label="Confirmed">
-          <google-chart
-            [type]="chart.PieChart"
-            [data]="deadChartDataArray"
-            [options]="chart.options"
-            [title]="confirmedTitle"
-            [height]="chart.height"
-          ></google-chart
-        ></mat-tab>
+          <div class="example-large-box mat-elevation-z4">
+            <google-chart
+              *ngIf="chartDataArray"
+              [type]="chart.type"
+              [data]="chartDataArray"
+              [options]="chart.options"
+              [title]="title"
+            ></google-chart>
+          </div>
+        </mat-tab>
         <mat-tab label="Dead">
           <google-chart
-            [type]="chart.PieChart"
-            [data]="deadChartDataArray"
+            *ngIf="chartDataArray"
+            [type]="chart.type"
+            [data]="chartDataArray"
             [options]="chart.options"
-            [title]="deadTitle"
-            [height]="chart.height"
+            [title]="title"
           ></google-chart
         ></mat-tab>
         <mat-tab label="Recovered">
           <google-chart
-            [type]="chart.PieChart"
-            [data]="recoveredChartDataArray"
+            *ngIf="chartDataArray"
+            [type]="chart.type"
+            [data]="chartDataArray"
             [options]="chart.options"
-            [title]="recoveredTitle"
-            [height]="chart.height"
+            [title]="title"
           ></google-chart
         ></mat-tab>
       </mat-tab-group>
