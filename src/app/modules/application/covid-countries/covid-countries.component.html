@@ -20,9 +20,7 @@
   <!--Table of countries-->
   <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 table">
     <ng-container matColumnDef="country" class="mat-column-country">
-      <th class="country-cell" mat-header-cell *matHeaderCellDef>
-        Country
-      </th>
+      <th class="country-cell" mat-header-cell *matHeaderCellDef>Country</th>
       <td class="country-cell" mat-cell *matCellDef="let element">
         <!--Country name & flag for all countries EXCEPT Diamond Princess (OT)-->
         <div *ngIf="element.countryCode !== 'OT'">
@@ -119,9 +117,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="confirmed" class="mat-column-cases">
-      <th class="cases-header" mat-header-cell *matHeaderCellDef>
-        Confirmed
-      </th>
+      <th class="cases-header" mat-header-cell *matHeaderCellDef>Confirmed</th>
       <div>
         <td mat-cell *matCellDef="let element">
           {{ element.totalConfirmed | number }}
@@ -129,17 +125,13 @@
       </div>
     </ng-container>
     <ng-container matColumnDef="deaths" class="mat-column-cases">
-      <th class="cases-header" mat-header-cell *matHeaderCellDef>
-        Dead
-      </th>
+      <th class="cases-header" mat-header-cell *matHeaderCellDef>Dead</th>
       <td mat-cell *matCellDef="let element">
         {{ element.totalDeaths | number }}
       </td>
     </ng-container>
     <ng-container matColumnDef="recovered" class="mat-column-cases">
-      <th class="cases-header" mat-header-cell *matHeaderCellDef>
-        Recovered
-      </th>
+      <th class="cases-header" mat-header-cell *matHeaderCellDef>Recovered</th>
       <td mat-cell *matCellDef="let element">
         {{ element.totalRecovered | number }}
       </td>

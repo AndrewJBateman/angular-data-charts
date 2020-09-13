@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
   }
 
   isNewsRoute() {
-    this.totalNewsItems = this.storageService.get("newsArrayLength");
+    this.totalNewsItems = this.storageService.get('newsArrayLength');
     return this.router.url === '/covid-news';
   }
 

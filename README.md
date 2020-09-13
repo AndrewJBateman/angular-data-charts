@@ -1,6 +1,6 @@
 # :zap: Angular Data Charts
 
-* This displays Covid data for the user country and worldwide.
+* This is a fully-responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using charts and tables.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -21,13 +21,13 @@
 
 ## :books: General info
 
-* **General:** Complete storage for charts, Add translation i18n. Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location.
-* **Home Page:** Cards showing world and country Covid data - using [iPapa API](https://ipapi.co/) to detect user country. Data shown in tables on Mat-cards and on Google charts using tab-groups to select between confirmed cases, deaths and recovered.
+* **General:** Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location and shows data from that country.
+* **Home Page:** World and local Covid data - using [iPapa API](https://ipapi.co/) to detect user country. Data shown in tables on Mat-cards and on Google charts using tab-groups to select between confirmed cases, deaths and recovered.
 * **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from the Countryflags API.
-* **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras.. **add country select menu.**
+* **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app. **add country select menu.**
 * **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
-* **About Page:** TODO. Mat-cards show details of each page
-* **Contact Page:** TODO
+* **About Page:** Mat-cards show details of each page with useful links
+* **Contact Page:** Mat-card with Github and contact details from the Github API (no API access key required for this).
 
 ## :camera: Screenshots
 
@@ -53,9 +53,8 @@
 * [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
-* [Coronatracker API Document](http://api.coronatracker.com/)
+* [Coronatracker API](http://api.coronatracker.com/)
 * [Country Flags API](https://www.countryflags.io)
-* geolocation API [website](https://ipgeolocationapi.com/) to detect user country etc. Code has not been updated for 2 years and has issues withh CORS.
 
 ## :floppy_disk: Setup
 
@@ -105,11 +104,12 @@ getCovidNews(): Observable<NewsItems> {
 ## :cool: Features
 
 * Separate Material module with all Material modules accessed via Shared module
+* Detects user location data during the Home page ng 'on initialisation' lifecycle using a simple API GET request via the `location.service.ts` file.
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work
-* To-Do: See General Info
+* Status: Nearly complete
+* To-Do: Add testing
 
 ## :clap: Inspiration
 

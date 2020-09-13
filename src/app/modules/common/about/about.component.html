@@ -4,7 +4,8 @@
 
 <div class="main-container">
   <h2 class="page-header" fxHide.lt-md>
-    <mat-icon class="page-header-icon">coronavirus</mat-icon>App/Page Descriptions
+    <mat-icon class="page-header-icon">coronavirus</mat-icon>App/Page
+    Descriptions
   </h2>
 
   <!--mat-card for each page with data-binding from page.module.ts-->
@@ -24,7 +25,12 @@
               {{ page.website1 }}
             </a>
             <div fxFlex></div>
-            <a *ngIf="page.website2 && page.website2.length > 0" href="{{ page.link2 }}" target="_blank" rel="noopener">
+            <a
+              *ngIf="page.website2 && page.website2.length > 0"
+              href="{{ page.link2 }}"
+              target="_blank"
+              rel="noopener"
+            >
               {{ page.website2 }}
             </a>
             <div fxFlex></div>
