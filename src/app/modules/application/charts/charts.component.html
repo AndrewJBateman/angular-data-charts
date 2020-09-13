@@ -7,31 +7,35 @@
 
 <div class="main-container">
   <div class="top-section">
-    <h2 class="main-heading" fxHide.lt-md><mat-icon class="page-header-icon">analytics</mat-icon
-      >Google Charts Covid Data</h2>
+    <h2 class="main-heading" fxHide.lt-md>
+      <mat-icon class="page-header-icon">analytics</mat-icon>Google Charts Covid
+      Data
+    </h2>
 
-    <h2 id="cases-radio-group-label">Select Data Class</h2>
-    <mat-radio-group
-      aria-labelledby="cases-radio-group-label"
-      class="cases-radio-group"
-      [(ngModel)]="selectedClass"
-    >
-      <mat-radio-button
-        class="cases-radio-button"
-        *ngFor="let caseClass of caseClasses"
-        [value]="caseClass"
-        (click)="getChartData(caseClass)"
-        aria-label="radio button select coronavirus type {{ caseClass }}"
+    <h2 class="main-heading" id="cases-radio-group-label">
+      <mat-icon class="page-header-icon">touch_app</mat-icon>
+      <mat-radio-group
+        aria-labelledby="cases-radio-group-label"
+        class="cases-radio-group"
+        [(ngModel)]="selectedClass"
       >
-        {{ caseClass }}
-      </mat-radio-button>
-    </mat-radio-group>
+        <mat-radio-button
+          class="cases-radio-button"
+          *ngFor="let caseClass of caseClasses"
+          [value]="caseClass"
+          (click)="getChartData(caseClass)"
+          aria-label="radio button select coronavirus type {{ caseClass }}"
+        >
+          {{ caseClass }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </h2>
   </div>
 
   <!--Bottom Chart section-->
   <div
     *ngIf="chartDataArray[0]"
-    class="container"
+    class="chart-container"
     fxLayout
     fxLayout.xs="column"
     fxLayoutAlign="center"
@@ -39,7 +43,7 @@
     fxLayoutGap.xs="0"
   >
     <!--Chart section lhs-->
-    <div class="item-1" fxFlex="50%">
+    <div fxFlex="50%">
       <google-chart
         [type]="chart.PieChart"
         [data]="chartDataArray"
@@ -49,7 +53,7 @@
       ></google-chart>
     </div>
 
-    <div class="item-2" fxFlex="50%" fxFlexOrder="2">
+    <div fxFlex="50%" fxFlexOrder="2">
       <google-chart
         [type]="chart.ColumnChart"
         [data]="chartDataArray"

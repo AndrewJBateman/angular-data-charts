@@ -31,7 +31,13 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./img/dashboard.png)
+![Example screenshot](./img/home.png)
+![Example screenshot](./img/home-mob.png)
+![Example screenshot](./img/country-list.png)
+![Example screenshot](./img/news.png)
+![Example screenshot](./img/charts.png)
+![Example screenshot](./img/about.png)
+![Example screenshot](./img/contact.png)
 ![Example screenshot](./img/screen-sizes.png)
 
 ## :signal_strength: Technologies

@@ -2,12 +2,22 @@
   padding: 0 16px;
 }
 
+.sub-heading {
+text-align: center;
+}
+
 .cases-radio-group {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
-  margin: 15px 0;
+  margin: 15px auto;
+  align-content: center;
 }
 
 .cases-radio-button {
   margin: 5px;
+}
+
+.chart-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
