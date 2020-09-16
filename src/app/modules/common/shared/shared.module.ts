@@ -5,10 +5,6 @@ import { PipesModule } from '../../../pipes/pipes.module';
 
 @NgModule({
   declarations: [],
-  exports: [
-    CommonModule,
-    MaterialModule,
-    PipesModule
-  ]
+  exports: [CommonModule, MaterialModule, PipesModule],
 })
-export class SharedModule { }
+export class SharedModule {}

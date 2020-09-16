@@ -12,7 +12,7 @@
       Data
     </h2>
 
-    <h2 class="main-heading" id="cases-radio-group-label">
+    <h4 class="main-heading" id="cases-radio-group-label">
       <mat-icon class="page-header-icon">touch_app</mat-icon>
       <mat-radio-group
         aria-labelledby="cases-radio-group-label"
@@ -29,7 +29,7 @@
           {{ caseClass }}
         </mat-radio-button>
       </mat-radio-group>
-    </h2>
+    </h4>
   </div>
 
   <!--Bottom Chart section-->
@@ -42,24 +42,25 @@
     fxLayoutGap="10px"
     fxLayoutGap.xs="0"
   >
-    <!--Chart section lhs-->
+    <!--Pie chart lhs-->
     <div fxFlex="50%">
       <google-chart
-        [type]="chart.PieChart"
+        [type]="chart.BarChart"
         [data]="chartDataArray"
         [options]="chart.options"
-        [title]="title"
+        [columns]="columnNames"
+        [title]="columnChartTitle"
         [height]="chart.height"
       ></google-chart>
     </div>
 
+    <!--Column chart lhs-->
     <div fxFlex="50%" fxFlexOrder="2">
       <google-chart
-        [type]="chart.ColumnChart"
+        [type]="chart.PieChart"
         [data]="chartDataArray"
         [options]="chart.options"
-        [columns]="columnNames"
-        [title]="title"
+        [title]="barChartTitle"
         [height]="chart.height"
       ></google-chart>
     </div>

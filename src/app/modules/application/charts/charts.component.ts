@@ -18,14 +18,17 @@ export class ChartsComponent implements OnInit {
   // chart data setup
   chartDataArray = [];
   worldData: CountriesCount[];
-  title = '';
+  columnChartTitle = '';
+  barChartTitle = '';
   columnNames = ['Country', 'Cases'];
 
   // angular-charts setup
   chart = {
     PieChart: 'PieChart',
     ColumnChart: 'ColumnChart',
+    BarChart: 'BarChart',
     height: 400,
+    width: 800,
     options: {
       animation: {
         duration: 500,
@@ -46,9 +49,19 @@ export class ChartsComponent implements OnInit {
     this.worldData.forEach((cases) => {
       let country: string;
       let value: number;
-      const confirmedThreshold = 600000;
+      const confirmedThreshold = 500000;
       const recoveredThreshold = 400000;
       const deadThreshold = 30000;
+      const thresholdNumberToString = (number: number) => {
+        return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      };
+      const confirmedThresholdString = thresholdNumberToString(
+        confirmedThreshold
+      );
+      const recoveredThresholdString = thresholdNumberToString(
+        recoveredThreshold
+      );
+      const deadThresholdString = thresholdNumberToString(deadThreshold);
 
       // Switch case to change between user-selected case class
       switch (caseClass) {
@@ -57,7 +70,8 @@ export class ChartsComponent implements OnInit {
             country = cases.country;
             value = cases.totalConfirmed;
           }
-          this.title = `Countries having more than ${confirmedThreshold} ${caseClass} cases`;
+          this.columnChartTitle = `${this.chart.ColumnChart} of countries with > ${confirmedThresholdString} ${caseClass} cases`;
+          this.barChartTitle = `${this.chart.BarChart} of countries with > ${confirmedThresholdString} ${caseClass} cases`;
           break;
 
         case 'Recovered':
@@ -65,7 +79,8 @@ export class ChartsComponent implements OnInit {
             country = cases.country;
             value = cases.totalRecovered;
           }
-          this.title = `Countries having more than ${recoveredThreshold} ${caseClass} cases`;
+          this.columnChartTitle = `${this.chart.ColumnChart} of countries with > ${recoveredThresholdString} ${caseClass}`;
+          this.barChartTitle = `${this.chart.BarChart} of countries with > ${recoveredThresholdString} ${caseClass}`;
           break;
 
         case 'Dead':
@@ -73,7 +88,8 @@ export class ChartsComponent implements OnInit {
             country = cases.country;
             value = cases.totalDeaths;
           }
-          this.title = `Countries having more than ${deadThreshold} deaths`;
+          this.columnChartTitle = `${this.chart.ColumnChart} of countries with > ${deadThresholdString} ${caseClass}`;
+          this.barChartTitle = `${this.chart.BarChart} of countries with > ${deadThresholdString} ${caseClass}`;
           break;
       }
 

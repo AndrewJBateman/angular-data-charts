@@ -1,6 +1,6 @@
 # :zap: Angular Data Charts
 
-* This is a fully-responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using charts and tables.
+* This is a fully-responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using google-charts and Angular Material tables/display components.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -116,6 +116,7 @@ getCovidNews(): Observable<NewsItems> {
 * [Angular Material 10/9 Tutorial: Build Navigation UI with Toolbar and Side Navigation Menu](https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/)
 * [Angular Material Theme Colors](https://medium.com/@treviergits/angular-material-theme-color-options-7d5968cb7460)
 * [TutorialsPoint: Angular Google Charts Tutorial](https://www.tutorialspoint.com/angular_googlecharts/index.htm)
+* [Stackoverflow, Regular Expression for formatting numbers in JavaScript](https://stackoverflow.com/questions/2254185/regular-expression-for-formatting-numbers-in-javascript) to convert chart threshold numbers to strings with comma separation
 
 ## :envelope: Contact
 

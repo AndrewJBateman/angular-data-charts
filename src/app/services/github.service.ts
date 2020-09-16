@@ -21,7 +21,7 @@ export class GithubService {
       // .get<User>(userSearchUrl, { params })
       .get<User>(userSearchUrl)
       .pipe(
-        tap((data: User) => console.log('user data', data)),
+        // tap((data: User) => console.log('user data', data)),
         map((data: User) => data),
         catchError((err) => {
           return throwError(
