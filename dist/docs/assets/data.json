@@ -1,0 +1,16 @@
+{"countries":
+  {
+    "USA":
+      {"country_name":"USA","total_cases":1735029,"total_recovered":481988,"total_deaths":101285},
+    "Brazil":
+      {"country_name":"Brazil","total_cases":394507,"total_recovered":158593,"total_deaths":24600},
+    "Russia":
+      {"country_name":"Russia","total_cases":370680,"total_recovered":142208,"total_deaths":3968},
+    "Spain":
+      {"country_name":"Spain","total_cases":283339,"total_recovered":196958,"total_deaths":27117},
+    "UK":
+      {"country_name":"UK","total_cases":267240,"total_recovered":null,"total_deaths":37460},
+    "China":
+      {"country_name":"China","total_cases":82993,"total_recovered":78280,"total_deaths":4634}
+  }
+}
