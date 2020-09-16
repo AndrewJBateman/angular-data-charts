@@ -4,15 +4,11 @@ import { throwError, Observable } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import { StorageService } from '../services/localstorage.service';
-import {
-  GlobalCount,
-  CountriesCount,
-  NewsItems,
-} from '../models/covid';
+import { GlobalCount, CountriesCount, NewsItems } from '../models/covid';
 import { Location } from '../models/location';
 
-const apiBaseUrl = 'http://api.coronatracker.com/v3/stats/worldometer/';
-const apiNewsBaseUrl = 'http://api.coronatracker.com/news/trending';
+const apiBaseUrl = 'https://api.coronatracker.com/v3/stats/worldometer/';
+const apiNewsBaseUrl = 'https://api.coronatracker.com/news/trending';
 
 @Injectable({
   providedIn: 'root',
@@ -42,17 +38,19 @@ export class CovidDataService {
   getUserCountryData(): Observable<CountriesCount[]> {
     this.userCountryData = this.storageService.get('storedUserCountryData');
     this.userCountryCode = this.userCountryData.country_code;
-    return this.http
-      .get<CountriesCount[]>(
-        apiBaseUrl + 'country?countryCode=' + this.userCountryCode
-      )
-      .pipe(
-        // tap((data: CountriesCount[]) => console.log('userCountry data', data)),
-        map((data: CountriesCount[]) => data),
-        catchError((err) => {
-          return throwError(err);
-        })
-      );
+    if (this.userCountryCode) {
+      return this.http
+        .get<CountriesCount[]>(
+          apiBaseUrl + 'country?countryCode=' + this.userCountryCode
+        )
+        .pipe(
+          // tap((data: CountriesCount[]) => console.log('userCountry data', data)),
+          map((data: CountriesCount[]) => data),
+          catchError((err) => {
+            return throwError(err);
+          })
+        );
+    }
   }
 
   getCountriesArrayData(): Observable<CountriesCount[]> {
