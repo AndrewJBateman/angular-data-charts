@@ -55,10 +55,6 @@ export class HomeComponent implements OnInit {
     private storageService: StorageService
   ) {}
 
-  // test(a){
-  //   console.log('a.index: ', a.index);
-  // }
-
   // function to push chart data into an arrays using a forEach loop
   // index of mat-tab-group used in switch case to choose class of data
   getChartData(tab: { index: number; tab?: string }) {
@@ -139,9 +135,10 @@ export class HomeComponent implements OnInit {
     this.dataService
       .getUserCountryData()
       .subscribe((data: CountriesCount[]) => {
-        this.storageService.set('storedUserCountryCovidData', data[0]);
-        this.userCountryData = this.storageService.get(
-          'storedUserCountryCovidData'
+        this.userCountryData = data[0];
+        this.storageService.set(
+          'storedUserCountryCovidData',
+          this.userCountryData
         );
         this.userCountry = this.userCountryData.country;
         this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;

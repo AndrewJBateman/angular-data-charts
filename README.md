@@ -26,7 +26,7 @@
 * **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from the Countryflags API.
 * **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app. **add country select menu.**
 * **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
-* **About Page:** Mat-cards show details of each page with useful links
+* **About Page:** Mat-cards show details of each page with useful links.
 * **Contact Page:** Mat-card with Github and contact details from the Github API (no API access key required for this).
 
 ## :camera: Screenshots
@@ -103,7 +103,7 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :cool: Features
 
-* Separate Material module with all Material modules accessed via Shared module
+* Separate Material module with all Material modules accessed via Shared module - review this decision!
 * Detects user location data during the Home page ng 'on initialisation' lifecycle using a simple API GET request via the `location.service.ts` file.
 
 ## :clipboard: Status & To-Do List
@@ -117,6 +117,8 @@ getCovidNews(): Observable<NewsItems> {
 * [Angular Material Theme Colors](https://medium.com/@treviergits/angular-material-theme-color-options-7d5968cb7460)
 * [TutorialsPoint: Angular Google Charts Tutorial](https://www.tutorialspoint.com/angular_googlecharts/index.htm)
 * [Stackoverflow, Regular Expression for formatting numbers in JavaScript](https://stackoverflow.com/questions/2254185/regular-expression-for-formatting-numbers-in-javascript) to convert chart threshold numbers to strings with comma separation
+* [Santosh Yadav, Stop Using Shared Material Module](https://indepth.dev/stop-using-shared-material-module/)
+* [#ANGULAR, Deploying an Angular App to Firebase Hosting](https://alligator.io/angular/deploying-angular-app-to-firebase/)
 
 ## :envelope: Contact
 

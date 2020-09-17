@@ -18,6 +18,7 @@
   <!--Cases info: worldwide & user country-->
   <div class="home-card-style">
     <app-home-card
+      *ngIf="userCountry"
       [userCountry]="userCountry"
       [worldTotalConfirmed]="worldTotalConfirmed"
       [worldTotalDeaths]="worldTotalDeaths"
