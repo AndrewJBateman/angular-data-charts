@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../material.module';
 import { PipesModule } from '../../../pipes/pipes.module';
@@ -7,4 +7,11 @@ import { PipesModule } from '../../../pipes/pipes.module';
   declarations: [],
   exports: [CommonModule, MaterialModule, PipesModule],
 })
-export class SharedModule {}
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+		return {
+			ngModule: SharedModule,
+			providers: []
+		};
+	}
+}

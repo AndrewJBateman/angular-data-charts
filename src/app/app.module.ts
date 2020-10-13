@@ -43,7 +43,7 @@ import { ChartsComponent } from './modules/application/charts/charts.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     GoogleChartsModule.forRoot({ version: '49' }),
-    SharedModule,
+    SharedModule.forRoot(),
     PipesModule
   ],
   providers: [StorageService],

@@ -140,7 +140,8 @@ export class HomeComponent implements OnInit {
           'storedUserCountryCovidData',
           this.userCountryData
         );
-        this.userCountry = this.userCountryData.country;
+        // this.userCountry = this.userCountryData.country;
+        this.userCountry = "Spain";
         this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
         this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
         this.userCountryTotalDeaths = this.userCountryData.totalDeaths;

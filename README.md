@@ -108,8 +108,8 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Nearly complete
-* To-Do: Add testing
+* Status: Working.
+* To-Do: Add testing. Fix user country service or add drop down country select menu.
 
 ## :clap: Inspiration
 
