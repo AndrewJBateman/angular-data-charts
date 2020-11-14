@@ -42,8 +42,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v10](https://angular.io/)
-* [Angular Material v10](https://material.angular.io/)
+* [Angular v11](https://angular.io/)
+* [Angular Material v11](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
 * [material design colors](https://www.materialpalette.com/colors) palette
@@ -59,8 +59,10 @@
 ## :floppy_disk: Setup
 
 * Install dependencies by running `npm i`
+* Run `ng test` for Jasmine tests carried out in Karma console
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files
 * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build
+* Deploy using `firebase deploy`
 
 ## :flashlight: Testing
 
@@ -103,13 +105,14 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :cool: Features
 
+* Uses latest Angular 11 & dependency versions
 * Separate Material module with all Material modules accessed via Shared module - review this decision!
 * Detects user location data during the Home page ng 'on initialisation' lifecycle using a simple API GET request via the `location.service.ts` file.
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working.
-* To-Do: Add testing. Fix user country service or add drop down country select menu.
+* Status: Working but issue with getting user country from storage before card using it is rendered
+* To-Do: Fix user country service or add drop down country select menu. Add Jasmine testing.
 
 ## :clap: Inspiration
 

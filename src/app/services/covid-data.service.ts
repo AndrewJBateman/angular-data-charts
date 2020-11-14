@@ -42,6 +42,7 @@ export class CovidDataService {
       return this.http
         .get<CountriesCount[]>(
           apiBaseUrl + 'country?countryCode=' + this.userCountryCode
+          // apiBaseUrl + 'country?countryCode=ES'
         )
         .pipe(
           // tap((data: CountriesCount[]) => console.log('userCountry data', data)),
