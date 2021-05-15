@@ -18,7 +18,7 @@
   <!--Cases info: worldwide & user country-->
   <div class="home-card-style">
     <app-home-card
-      *ngIf="userCountry"
+      *ngIf="userCountry; else loading"
       [userCountry]="userCountry"
       [worldTotalConfirmed]="worldTotalConfirmed"
       [worldTotalDeaths]="worldTotalDeaths"
@@ -33,6 +33,9 @@
       [dataCreatedDate]="dataCreatedDate"
     >
     </app-home-card>
+    <ng-template #loading>
+      <p>Condition is false ...</p>
+    </ng-template>
   </div>
   <!--Tab group of charts-->
   <div class="home-tabs-style">

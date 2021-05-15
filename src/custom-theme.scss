@@ -1,8 +1,9 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 
-@include mat-core();
-$custom-theme-primary: mat-palette($mat-blue-grey, 700);
-$custom-theme-accent: mat-palette($mat-blue, 900);
-$custom-theme-warn: mat-palette($mat-green, 800);
-$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
-@include angular-material-theme($custom-theme);
+@include mat.core();
+$custom-theme-primary: mat.define-palette(mat.$blue-grey-palette, 700);
+$custom-theme-accent: mat.define-palette(mat.$blue-palette, 900);
+$custom-theme-warn: mat.define-palette(mat.$green-palette, 800);
+$custom-theme: mat.define-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include mat.all-component-themes($custom-theme);

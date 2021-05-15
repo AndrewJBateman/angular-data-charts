@@ -12,7 +12,7 @@ import { Location } from '../../../models/location';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  userCountry: string;
+  public userCountry: string;
   userCountryCode: '';
   language = '';
   globalData: GlobalCount;
@@ -105,7 +105,9 @@ export class HomeComponent implements OnInit {
   // store this data in local storage the access it & run function to get chart data
   ngOnInit(): void {
     this.locationService.getLocation().subscribe((data: Location) => {
-      this.storageService.set('storedUserCountryData', data);
+      this.userCountry = data.country_name;
+      console.log('ngOnit this.userCountry: ', this.userCountry);
+      this.storageService.set('userCountry', this.userCountry);
     });
     this.getGlobalCovidData();
     this.getUserCountryCovidData();
@@ -119,7 +121,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getGlobalCovidData(): void {
+  getGlobalCovidData(): any {
     this.dataService.getGlobalData().subscribe((data: GlobalCount) => {
       this.storageService.set('storedGlobalCovidData', data);
       this.globalData = this.storageService.get('storedGlobalCovidData');
@@ -140,8 +142,6 @@ export class HomeComponent implements OnInit {
           'storedUserCountryCovidData',
           this.userCountryData
         );
-        // this.userCountry = this.userCountryData.country;
-        this.userCountry = "Spain";
         this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
         this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
         this.userCountryTotalDeaths = this.userCountryData.totalDeaths;

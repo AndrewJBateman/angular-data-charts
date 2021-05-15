@@ -1,8 +1,12 @@
 # :zap: Angular Data Charts
 
-* This is a fully-responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using google-charts and Angular Material tables/display components.
+* This is a responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using google-charts and Angular Material tables/display components.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-data-charts?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-data-charts?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-data-charts?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/angular-data-charts?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -17,6 +21,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -42,8 +47,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v11](https://angular.io/)
-* [Angular Material v11](https://material.angular.io/)
+* [Angular v12](https://angular.io/)
+* [Angular Material v12](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
 * [material design colors](https://www.materialpalette.com/colors) palette
@@ -105,13 +110,12 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :cool: Features
 
-* Uses latest Angular 11 & dependency versions
 * Separate Material module with all Material modules accessed via Shared module - review this decision!
 * Detects user location data during the Home page ng 'on initialisation' lifecycle using a simple API GET request via the `location.service.ts` file.
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working but issue with getting user country from storage before card using it is rendered
+* Status: Working but issue with getting user country from storage before card using it is rendered.
 * To-Do: Fix user country service or add drop down country select menu. Add Jasmine testing.
 
 ## :clap: Inspiration
@@ -123,6 +127,10 @@ getCovidNews(): Observable<NewsItems> {
 * [Santosh Yadav, Stop Using Shared Material Module](https://indepth.dev/stop-using-shared-material-module/)
 * [#ANGULAR, Deploying an Angular App to Firebase Hosting](https://alligator.io/angular/deploying-angular-app-to-firebase/)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com

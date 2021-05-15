@@ -17,7 +17,7 @@ export class CovidCountriesComponent implements OnInit {
   // countries: CountriesCount;
   todayDate: Date;
 
-  ELEMENT_DATA: CountriesCount[];
+  ELEMENT_DATA: CountriesCount[] = [];
   columnNames: string[] = ['country', 'confirmed', 'deaths', 'recovered'];
   dataSource = new MatTableDataSource<CountriesCount>(this.ELEMENT_DATA);
 
@@ -34,7 +34,7 @@ export class CovidCountriesComponent implements OnInit {
     this.covidDataService.getCountriesArrayData().subscribe((data) => {
       this.dataSource.data = data as CountriesCount[];
       this.todayDate = this.dataSource.data[0].lastUpdated;
-      // console.log('covid-countries data: ', this.dataSource.data);
+      console.log('covid-countries data: ', this.dataSource.data);
     });
   }
 }
