@@ -115,7 +115,7 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working but issue with getting user country from storage before card using it is rendered.
+* Status: aPapi data not working & issue with getting user country from storage before card using it is rendered.
 * To-Do: Fix user country service or add drop down country select menu. Add Jasmine testing.
 
 ## :clap: Inspiration
