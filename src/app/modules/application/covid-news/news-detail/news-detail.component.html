@@ -1,27 +1,17 @@
 <ng-container>
   <mat-card class="mat-elevation-z1">
-    <img
-      mat-card-image
-      [src]="newsItem.urlToImage"
-      alt="image for news item {{ newsItem.title }}"
-    />
+    <img mat-card-image [src]="newsItem.urlToImage" alt="image for news item {{ newsItem.title }}" />
 
     <mat-card-content>
       <p class="title-style">{{ newsItem.title }}</p>
       <p class="content-style">{{ newsItem.content }}</p>
       <span>
-        <a
-        mat-raised-button
-          (click)="onReturnToList()"
-          aria-label="button to return to list of news items"
-        >
+        <a mat-raised-button (click)="onReturnToList()" aria-label="button to return to list of news items">
           <mat-icon color="accent">arrow_back</mat-icon>
         </a>
         <div fxFlex></div>
         <div class="credit-date-text">
-          <a href="{{ newsItem.url }}" target="_blank" rel="noreferrer">
-            <mat-icon color="accent">copyright</mat-icon>{{ newsItem.siteName }}
-          </a>
+          <a href="{{ newsItem.url }}" target="_blank" rel="noreferrer"> <mat-icon color="accent">copyright</mat-icon>{{ newsItem.siteName }} </a>
         </div>
       </span>
     </mat-card-content>

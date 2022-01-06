@@ -15,11 +15,7 @@ export class CovidNewsComponent implements OnInit {
   newsTotalItems = 0;
   newsItems: NewsItem[];
 
-  constructor(
-    private covidDataService: CovidDataService,
-    private router: Router,
-    private storageService: StorageService
-  ) {}
+  constructor(private covidDataService: CovidDataService, private router: Router, private storageService: StorageService) {}
 
   ngOnInit(): void {
     this.getCovidNews();
@@ -28,9 +24,10 @@ export class CovidNewsComponent implements OnInit {
   // subscribe to news API data observable
   getCovidNews(): void {
     this.covidDataService.getCovidNews().subscribe((data: NewsItems) => {
-      this.storageService.set("totalNewsItems", data.total);
-      this.storageService.set("storedNewsItems", data.items);
-      this.newsItems = this.storageService.get("storedNewsItems");
+      this.storageService.set('totalNewsItems', data.total);
+      this.storageService.set('storedNewsItems', data.items);
+      this.newsItems = this.storageService.get('storedNewsItems');
+      console.log('newsItems:', this.newsItems);
     });
   }
 

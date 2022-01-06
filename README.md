@@ -48,7 +48,7 @@
 ## :signal_strength: Technologies
 
 * [Angular v13](https://angular.io/)
-* [Angular Material v12](https://material.angular.io/)
+* [Angular Material v13](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
 * [material design colors](https://www.materialpalette.com/colors) palette
@@ -116,7 +116,7 @@ getCovidNews(): Observable<NewsItems> {
 ## :clipboard: Status & To-Do List
 
 * Status: aPapi data not working & issue with getting user country from storage before card using it is rendered.
-* To-Do: Fix Angular Materials. Fix user country service or add drop down country select menu. Add Jasmine testing.
+* To-Do: Fix user country service or add drop down country select menu. Add Jasmine testing.
 
 ## :clap: Inspiration
 
