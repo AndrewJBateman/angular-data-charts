@@ -1,8 +1,5 @@
 <head>
-  <meta
-    name="description"
-    content="Home page with Coronavirus data. Clicking on a card will show more detail."
-  />
+  <meta name="description" content="Home page with Coronavirus data. Clicking on a card will show more detail." />
 </head>
 
 <div class="main-container">
@@ -27,9 +24,7 @@
       [userCountryTotalConfirmed]="userCountryTotalConfirmed"
       [userCountryTotalRecovered]="userCountryTotalRecovered"
       [userCountryTotalDeaths]="userCountryTotalDeaths"
-      [userCountryTotalConfirmedPerMillion]="
-        userCountryTotalConfirmedPerMillion
-      "
+      [userCountryTotalConfirmedPerMillion]="userCountryTotalConfirmedPerMillion"
       [dataCreatedDate]="dataCreatedDate"
     >
     </app-home-card>
@@ -43,32 +38,12 @@
       <mat-tab-group (selectedTabChange)="getChartData($event)">
         <mat-tab label="Confirmed">
           <div class="example-large-box mat-elevation-z4">
-            <google-chart
-              *ngIf="chartDataArray"
-              [type]="chart.type"
-              [data]="chartDataArray"
-              [options]="chart.options"
-              [title]="title"
-            ></google-chart>
+            <google-chart *ngIf="chartDataArray" [type]="chart.type" [data]="chartDataArray" [options]="chart.options" [title]="title"></google-chart>
           </div>
         </mat-tab>
-        <mat-tab label="Dead">
-          <google-chart
-            *ngIf="chartDataArray"
-            [type]="chart.type"
-            [data]="chartDataArray"
-            [options]="chart.options"
-            [title]="title"
-          ></google-chart
-        ></mat-tab>
+        <mat-tab label="Dead"> <google-chart *ngIf="chartDataArray" [type]="chart.type" [data]="chartDataArray" [options]="chart.options" [title]="title"></google-chart></mat-tab>
         <mat-tab label="Recovered">
-          <google-chart
-            *ngIf="chartDataArray"
-            [type]="chart.type"
-            [data]="chartDataArray"
-            [options]="chart.options"
-            [title]="title"
-          ></google-chart
+          <google-chart *ngIf="chartDataArray" [type]="chart.type" [data]="chartDataArray" [options]="chart.options" [title]="title"></google-chart
         ></mat-tab>
       </mat-tab-group>
     </mat-card>
