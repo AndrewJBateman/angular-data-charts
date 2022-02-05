@@ -17,9 +17,9 @@ export class LocationService {
     return this.http.get<Location>(apiUrl).pipe(
       // tap((data: Location) => console.log('data: ', data.country_name)),
       map((data: Location) => data),
-      catchError((err) => {
-        return throwError('Location data not found, error: ', err);
-      })
+      catchError(err => {
+        return throwError(() => new Error('Location data not found, error: '));
+      }),
     );
   }
 }

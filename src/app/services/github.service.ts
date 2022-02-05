@@ -24,10 +24,7 @@ export class GithubService {
         // tap((data: User) => console.log('user data', data)),
         map((data: User) => data),
         catchError((err) => {
-          return throwError(
-            "There was a problem fetching data from Github API, error: ",
-            err
-          );
+          return throwError(() => new Error('Github data not found, error: '));
         })
       );
   }
