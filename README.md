@@ -54,12 +54,12 @@
 * [material design colors](https://www.materialpalette.com/colors) palette
 * [Angular Google Charts](https://www.npmjs.com/package/angular-google-charts) wrapper for the Google Charts library
 * [Dayjs v1](https://github.com/iamkun/dayjs) to convert Github UTC Timestamp to '... ago'
-* [RxJS Library v6](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables
+* [RxJS Library v7](https://angular.io/guide/rx-library) used to handle datastreams and propagation of change using observables
 * [Angular Augury Chrome Extension](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd) v1 used for debugging
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Coronatracker API](http://api.coronatracker.com/)
-* [Country Flags API](https://www.countryflags.io)
+* [Country Flags API](https://www.countryflags.io) is down - need to find replacement?
 
 ## :floppy_disk: Setup
 
@@ -102,7 +102,7 @@ getCovidNews(): Observable<NewsItems> {
       // tap((data: NewsItems) => console.log('news data', data)),
       map((data: NewsItems) => data),
       catchError((err) => {
-        return throwError(err);
+        return throwError(() => new Error('News Item data not found, error: '));
       })
     );
 }
