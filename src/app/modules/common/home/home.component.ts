@@ -49,18 +49,14 @@ export class HomeComponent implements OnInit {
     },
   };
 
-  constructor(
-    private dataService: CovidDataService,
-    private locationService: LocationService,
-    private storageService: StorageService
-  ) {}
+  constructor(private dataService: CovidDataService, private locationService: LocationService, private storageService: StorageService) {}
 
-  // function to push chart data into an arrays using a forEach loop
+  // function to push chart data into an array using a forEach loop
   // index of mat-tab-group used in switch case to choose class of data
   getChartData(tab: { index: number; tab?: string }) {
     let tabNumber = tab.index;
     this.chartDataArray = [];
-    this.worldData.forEach((cases) => {
+    this.worldData.forEach(cases => {
       let country: string;
       let value: number;
       const confirmedThreshold = 500000;
@@ -104,20 +100,36 @@ export class HomeComponent implements OnInit {
   // get covid data for all world countries using data service then
   // store this data in local storage the access it & run function to get chart data
   ngOnInit(): void {
-    this.locationService.getLocation().subscribe((data: Location) => {
-      this.userCountry = data.country_name;
-      console.log('ngOnit this.userCountry: ', this.userCountry);
-      this.storageService.set('userCountry', this.userCountry);
-    });
+    try {
+      this.locationService.getLocation().subscribe((data: Location) => {
+        this.userCountry = data.country_name; // "Spain"
+        console.log('ngOnit this.userCountry: ', this.userCountry);
+        this.storageService.set('userCountry', this.userCountry);
+      });
+    } catch (error) {
+    } finally {
+      this.getUserCountryCovidData();
+    }
+
     this.getGlobalCovidData();
-    this.getUserCountryCovidData();
 
     this.dataService.getCountriesArrayData().subscribe({
-      next: (result) => {
+      next: result => {
         this.storageService.set('storedCountriesArrayData', result);
         this.worldData = this.storageService.get('storedCountriesArrayData');
         this.getChartData({ index: 0 });
       },
+    });
+  }
+
+  getUserCountryCovidData(): void {
+    this.dataService.getUserCountryData().subscribe((data: CountriesCount[]) => {
+      this.userCountryData = data[0];
+      this.storageService.set('storedUserCountryCovidData', this.userCountryData);
+      this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
+      this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
+      this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
+      this.userCountryTotalConfirmedPerMillion = this.userCountryData.totalConfirmedPerMillionPopulation;
     });
   }
 
@@ -131,21 +143,5 @@ export class HomeComponent implements OnInit {
       this.worldTotalConfirmedPerMillion = this.globalData.totalCasesPerMillionPop;
       this.dataCreatedDate = this.globalData.created;
     });
-  }
-
-  getUserCountryCovidData(): void {
-    this.dataService
-      .getUserCountryData()
-      .subscribe((data: CountriesCount[]) => {
-        this.userCountryData = data[0];
-        this.storageService.set(
-          'storedUserCountryCovidData',
-          this.userCountryData
-        );
-        this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
-        this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
-        this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
-        this.userCountryTotalConfirmedPerMillion = this.userCountryData.totalConfirmedPerMillionPopulation;
-      });
   }
 }
