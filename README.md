@@ -28,7 +28,7 @@
 
 * **General:** Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location and shows data from that country.
 * **Home Page:** World and local Covid data - using [iPapa API](https://ipapi.co/) to detect user country. Data shown in tables on Mat-cards and on Google charts using tab-groups to select between confirmed cases, deaths and recovered.
-* **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from the Countryflags API.
+* **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags WERE obtained from the Countryflags API - website is no longer :-( currently looking for replacement flags website.
 * **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app. **add country select menu.**
 * **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
 * **About Page:** Mat-cards show details of each page with useful links.
@@ -59,7 +59,7 @@
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Coronatracker API](http://api.coronatracker.com/)
-* [Country Flags API](https://www.countryflags.io) is down - need to find replacement?
+* [Country Flags API](https://www.countryflags.io) is down - need to find replacement? look at [CountryFlagsAPI](https://www.countryflagsapi.com/)
 
 ## :floppy_disk: Setup
 
@@ -76,7 +76,7 @@
 
 ## :computer: Code Examples
 
-* extract from `covid-news.component.ts` to subscribe to news API data and store it in local storage
+* extract from `covid-news.component.ts` to subscribe to news API data and store it in local storage.
 
 ```typescript
 // subscribe to news API data observable
@@ -115,8 +115,8 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: aPapi data not working & issue with getting user country from storage before card using it is rendered.
-* To-Do: Fix user country service or add drop down country select menu. Add Jasmine testing.
+* Status: Flags website is no longer - need to find replacement
+* To-Do: Fix flags issue. Add Jasmine testing.
 
 ## :clap: Inspiration
 
