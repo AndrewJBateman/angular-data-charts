@@ -1,24 +1,40 @@
-import { Injectable, Inject } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StorageService {
-  constructor() {}
+  sessionStorage: Storage;
 
-  set(key: string, data: any): void {
-    try {
-      sessionStorage.setItem(key, JSON.stringify(data));
-    } catch (err) {
-      console.error("Error saving to localStorage", err);
-    }
+  constructor() {
+    this.sessionStorage = window.sessionStorage;
   }
 
-  get(key: string) {
-    try {
-      return JSON.parse(sessionStorage.getItem(key));
-    } catch (err) {
-      console.error("Error getting data from localStorage", err);
-      return null;
+  set(key: string, data: any): boolean {
+    if (this.isSupported) {
+      try {
+        sessionStorage.setItem(key, JSON.stringify(data));
+        return true;
+      } catch (err) {
+        console.error('Error saving to localStorage', err);
+        return false;
+      }
     }
+    return false;
+  }
+
+  get(key: string): any {
+    if (this.isSupported) {
+      try {
+        return JSON.parse(sessionStorage.getItem(key));
+      } catch (err) {
+        console.error('Error getting data from session Storage', err);
+        return null;
+      }
+    }
+    return null;
+  }
+
+  get isSupported(): boolean {
+    return !!this.sessionStorage;
   }
 
   clear(): void {
