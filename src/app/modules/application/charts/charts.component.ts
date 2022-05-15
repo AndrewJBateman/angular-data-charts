@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CovidDataService } from '../../../services/covid-data.service';
-import { CountriesCount } from '../../../models/covid';
+import { CountryCount } from '../../../models/covid';
 import { StorageService } from '../../../services/localstorage.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ChartsComponent implements OnInit {
 
   // chart data setup
   chartDataArray = [];
-  worldData: CountriesCount[];
+  worldData: CountryCount[];
   columnChartTitle = '';
   barChartTitle = '';
   columnNames = ['Country', 'Cases'];
@@ -38,7 +38,7 @@ export class ChartsComponent implements OnInit {
     },
   };
 
-  countries: CountriesCount[];
+  countries: CountryCount[];
   constructor(
     private dataService: CovidDataService,
     private storageService: StorageService
@@ -49,9 +49,9 @@ export class ChartsComponent implements OnInit {
     this.worldData.forEach((cases) => {
       let country: string;
       let value: number;
-      const confirmedThreshold = 500000;
-      const recoveredThreshold = 400000;
-      const deadThreshold = 30000;
+      const confirmedThreshold = 8000000;
+      const recoveredThreshold = 6000000;
+      const deadThreshold = 100000;
       const thresholdNumberToString = (number: number) => {
         return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       };

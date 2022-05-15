@@ -1,24 +1,14 @@
 <head>
-  <meta
-    name="description"
-    content="This page shows a charts of all countries with Covid-19 data."
-  />
+  <meta name="description" content="This page shows a charts of all countries with Covid-19 data." />
 </head>
 
 <div class="main-container">
   <div class="top-section">
-    <h2 class="main-heading" fxHide.lt-md>
-      <mat-icon class="page-header-icon">analytics</mat-icon>Google Charts Covid
-      Data
-    </h2>
+    <h2 class="main-heading" fxHide.lt-md><mat-icon class="page-header-icon">analytics</mat-icon>Google Charts Covid Data</h2>
 
     <h4 class="main-heading" id="cases-radio-group-label">
       <mat-icon class="page-header-icon">touch_app</mat-icon>
-      <mat-radio-group
-        aria-labelledby="cases-radio-group-label"
-        class="cases-radio-group"
-        [(ngModel)]="selectedClass"
-      >
+      <mat-radio-group aria-labelledby="cases-radio-group-label" class="cases-radio-group" [(ngModel)]="selectedClass">
         <mat-radio-button
           class="cases-radio-button"
           *ngFor="let caseClass of caseClasses"
@@ -33,15 +23,7 @@
   </div>
 
   <!--Bottom Chart section-->
-  <div
-    *ngIf="chartDataArray[0]"
-    class="chart-container"
-    fxLayout
-    fxLayout.xs="column"
-    fxLayoutAlign="center"
-    fxLayoutGap="10px"
-    fxLayoutGap.xs="0"
-  >
+  <div *ngIf="chartDataArray[0]" class="chart-container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
     <!--Pie chart lhs-->
     <div fxFlex="50%">
       <google-chart
@@ -56,13 +38,7 @@
 
     <!--Column chart lhs-->
     <div fxFlex="50%" fxFlexOrder="2">
-      <google-chart
-        [type]="chart.PieChart"
-        [data]="chartDataArray"
-        [options]="chart.options"
-        [title]="barChartTitle"
-        [height]="chart.height"
-      ></google-chart>
+      <google-chart [type]="chart.PieChart" [data]="chartDataArray" [options]="chart.options" [title]="barChartTitle" [height]="chart.height"></google-chart>
     </div>
   </div>
 </div>

@@ -27,7 +27,6 @@ export class CovidNewsComponent implements OnInit {
       this.storageService.set('totalNewsItems', data.total);
       this.storageService.set('storedNewsItems', data.items);
       this.newsItems = this.storageService.get('storedNewsItems');
-      console.log('newsItems:', this.newsItems);
     });
   }
 

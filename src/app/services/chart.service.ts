@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { StorageService } from '../services/localstorage.service';
-import { CountriesCount } from '../models/covid';
+import { CountryCount } from '../models/covid';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,13 @@ export class ChartService {
 
   // chart data setup
   chartDataArray = [];
-  worldData: CountriesCount[];
+  worldData: CountryCount[];
   title = '';
   columnNames = ['Country', 'Cases'];
 
   constructor(private storageService: StorageService) { }
 
   getChartData(caseClass: string) {
-    // console.log('started getChartData function with caseClass: ', caseClass);
     this.worldData = this.storageService.get('storedCountriesArrayData');
     this.chartDataArray = [];
     this.worldData.forEach((cases) => {

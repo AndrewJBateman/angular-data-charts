@@ -24,9 +24,9 @@ export const PAGES: Page[] = [
   {
     title: 'Country List',
     icon: 'language',
-    content: `Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from the Countryflags API. The numbers from the Covid data are formatted using the Angular number pipe`,
+    content: `Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags are obtained from CountryFlagsAPI. The numbers from the Covid data are formatted using the Angular number pipe`,
     website1: 'Countryflags API',
-    link1: 'https://www.countryflags.io',
+    link1: 'https://www.countryflagsapi.com/',
     website2: 'Angular number pipe',
     link2: 'https://angular.io/api/common/DecimalPipe#description',
   },

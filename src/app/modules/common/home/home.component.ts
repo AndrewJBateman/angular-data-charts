@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CovidDataService } from '../../../services/covid-data.service';
 import { LocationService } from '../../../services/location.service';
 import { StorageService } from '../../../services/localstorage.service';
-import { GlobalCount, CountriesCount } from '../../../models/covid';
+import { GlobalCount, CountryCount } from '../../../models/covid';
 import { Location } from '../../../models/location';
 
 @Component({
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   userCountryCode: '';
   language = '';
   globalData: GlobalCount;
-  userCountryData: CountriesCount;
+  userCountryData: CountryCount;
   worldTotalConfirmed: number;
   worldTotalRecovered: number;
   worldTotalDeaths: number;
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
   // chart data setup
   chartDataArray = [];
-  worldData: CountriesCount[];
+  worldData: CountryCount[];
   title = '';
 
   // angular-charts setup
@@ -59,9 +59,9 @@ export class HomeComponent implements OnInit {
     this.worldData.forEach(cases => {
       let country: string;
       let value: number;
-      const confirmedThreshold = 500000;
-      const recoveredThreshold = 400000;
-      const deadThreshold = 30000;
+      const confirmedThreshold = 6000000;
+      const recoveredThreshold = 6000000;
+      const deadThreshold =200000;
 
       // Switch case to change between user-selected case class
       switch (tabNumber) {
@@ -102,8 +102,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     try {
       this.locationService.getLocation().subscribe((data: Location) => {
-        this.userCountry = data.country_name; // "Spain"
-        console.log('ngOnit this.userCountry: ', this.userCountry);
+        this.userCountry = data.country_name;
         this.storageService.set('userCountry', this.userCountry);
       });
     } catch (error) {
@@ -123,7 +122,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUserCountryCovidData(): void {
-    this.dataService.getUserCountryData().subscribe((data: CountriesCount[]) => {
+    this.dataService.getUserCountryData().subscribe((data: CountryCount[]) => {
       this.userCountryData = data[0];
       this.storageService.set('storedUserCountryCovidData', this.userCountryData);
       this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
