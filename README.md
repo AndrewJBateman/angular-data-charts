@@ -59,7 +59,7 @@
 * [rxaviers: Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
 * [Quicktype to extract typescript model from JSON object](https://app.quicktype.io/)
 * [Coronatracker API](http://api.coronatracker.com/)
-* [Country Flags API](https://www.countryflags.io) is down - need to find replacement? look at [CountryFlagsAPI](https://www.countryflagsapi.com/)
+* [Country Flags API](https://www.countryflagsapi.com/)
 
 ## :floppy_disk: Setup
 
@@ -115,8 +115,8 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Flags website is no longer - need to find replacement
-* To-Do: Fix flags issue. Add Jasmine testing.
+* Status: Working
+* To-Do: Add blank flag where API cannot find flag
 
 ## :clap: Inspiration
 
