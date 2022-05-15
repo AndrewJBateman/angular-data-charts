@@ -1,8 +1,5 @@
 <head>
-  <meta
-    name="description"
-    content="This page shows a list of all countries with Covid-19 data."
-  />
+  <meta name="description" content="This page shows a list of all countries with Covid-19 data." />
 </head>
 
 <div class="main-container">
@@ -10,8 +7,7 @@
   <div fxHide.lt-md>
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
       <h2 class="main-heading">
-        <mat-icon class="page-header-icon"> today </mat-icon
-        ><span class="heading-date">{{ todayDate | date }}</span>
+        <mat-icon class="page-header-icon"> today </mat-icon><span class="heading-date">{{ todayDate | date }}</span>
         Covid-19 - Country List
       </h2>
     </div>
@@ -22,97 +18,8 @@
     <ng-container matColumnDef="country" class="mat-column-country">
       <th class="country-cell" mat-header-cell *matHeaderCellDef>Country</th>
       <td class="country-cell" mat-cell *matCellDef="let element">
-        <!--Country name & flag for all countries EXCEPT Diamond Princess (OT)-->
-        <div *ngIf="element.countryCode !== 'OT'">
-          <img
-            *ngIf="
-              element.country !== 'South Sudan' &&
-              element.country !== 'United Arab Emirates' &&
-              element.country !== 'Channel Islands' &&
-              element.country !== 'Falkland Islands' &&
-              element.country !== 'Brunei ' &&
-              element.country !== 'Caribbean Netherlands' &&
-              element.country !== 'MS Zaandam' &&
-              element.country !== 'Saint Pierre Miquelon' &&
-              element.country !== 'Central African Republic'
-            "
-            class="country-flag"
-            src="https://www.countryflags.io/{{
-              element.countryCode
-            }}/flat/24.png"
-            alt="flag for {{ element.countryName }}"
-          />
-          <img
-            *ngIf="element.country == 'United Arab Emirates'"
-            class="country-flag"
-            src="https://www.countryflags.io/AE/flat/24.png"
-            alt="flag for United Arab Emerates"
-          />
-          <img
-            *ngIf="element.country == 'South Sudan'"
-            class="country-flag"
-            src="https://www.countryflags.io/SS/flat/24.png"
-            alt="flag for South Sudan"
-          />
-          <img
-            *ngIf="element.country == 'Channel Islands'"
-            class="country-flag-jersey"
-            src="../../../../assets/jersey_flag.png"
-            alt="flag for the Channel Islands"
-          />
-          <img
-            *ngIf="element.country == 'Falkland Islands'"
-            class="country-flag"
-            src="https://www.countryflags.io/FK/flat/24.png"
-            alt="flag for the Channel Islands"
-          />
-          <img
-            *ngIf="element.country == 'Brunei '"
-            class="country-flag"
-            src="https://www.countryflags.io/BN/flat/24.png"
-            alt="flag for Brunei"
-          />
-          <img
-            *ngIf="element.country == 'Caribbean Netherlands'"
-            class="country-flag"
-            src="https://www.countryflags.io/AN/flat/24.png"
-            alt="flag for Netherlands Antilles"
-          />
-          <img
-            *ngIf="element.country == 'MS Zaandam'"
-            class="country-flag"
-            src="https://www.countryflags.io/NL/flat/24.png"
-            alt="flag for MS Zaandam"
-          />
-          <img
-            *ngIf="element.country == 'Saint Pierre Miquelon'"
-            class="country-flag"
-            src="https://www.countryflags.io/PM/flat/24.png"
-            alt="flag for Saint Pierre And Miquelon"
-          />
-          <img
-            *ngIf="element.country == 'Central African Republic'"
-            class="country-flag"
-            src="https://www.countryflags.io/CF/flat/24.png"
-            alt="flag for Central African Republic"
-          />
-          <span *ngIf="element.countryCode == 'CF'"
-            >Central African Republic</span
-          >
-          <span *ngIf="element.countryCode !== 'CF'">{{
-            element.country
-          }}</span>
-          <!-- {{ element.country }} -->
-        </div>
-        <!--Country name & flag for just the Diamond Princess (OT)-->
-        <div *ngIf="element.countryCode == 'OT'">
-          <img
-            *ngIf="element.country !== 'United Arab Emirates'"
-            class="country-flag"
-            src="https://www.countryflags.io/GB/flat/24.png"
-            alt="flag for Diamond Princess Cruise Ship"
-          />
-          Diamond Princess
+        <div>
+          <img class="country-flag" src="https://www.countryflagsapi.com/svg/{{ element.countryCode }}" alt="flag for {{ element.countryName }}" />
         </div>
       </td>
     </ng-container>
