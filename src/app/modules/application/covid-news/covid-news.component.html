@@ -16,12 +16,6 @@
       (click)="onGoToNewsDetail(item)"
       aria-label="navigate to article detail"
     >
-      <img
-        mat-card-image
-        [src]="item.urlToImage"
-        [alt]="item.title"
-        class="card-image"
-      />
       <mat-card-content class="card-content">
         <p class="title-style">{{ item.title }}</p>
         <p class="content-style">{{ item.content | slice: 0:100 }}...</p>

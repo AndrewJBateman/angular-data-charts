@@ -16,7 +16,7 @@ export class CovidDataService {
   storedCountryData: CountryCount[];
   userCountryData: CountryCount;
   userCountryCode: string;
-  userCountry: '';
+  userCountry: string;
   newsArrayLength: number;
 
   constructor(private http: HttpClient, private storageService: StorageService) {}
@@ -56,10 +56,9 @@ export class CovidDataService {
 
   // create news API observable
   getCovidNews(): Observable<NewsItems> {
-    this.newsArrayLength = 20;
+    this.newsArrayLength = 40;
     this.storageService.set('newsArrayLength', this.newsArrayLength);
-    this.userCountry = this.storageService.get('userCountry');
-    return this.http.get<NewsItems>(apiNewsBaseUrl + `?limit=${this.newsArrayLength}&offset&country=${this.userCountry}`).pipe(
+    return this.http.get<NewsItems>(apiNewsBaseUrl + `?limit=${this.newsArrayLength}&offset`).pipe(
       // tap((data: NewsItems) => console.log('news data', data)),
       map((data: NewsItems) => data),
       catchError(err => {

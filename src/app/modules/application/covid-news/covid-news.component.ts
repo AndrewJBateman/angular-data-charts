@@ -11,7 +11,7 @@ import { StorageService } from '../../../services/localstorage.service';
   styleUrls: ['./covid-news.component.css'],
 })
 export class CovidNewsComponent implements OnInit {
-  date = '';
+  date: string;
   newsTotalItems = 0;
   newsItems: NewsItem[];
 
@@ -24,6 +24,7 @@ export class CovidNewsComponent implements OnInit {
   // subscribe to news API data observable
   getCovidNews(): void {
     this.covidDataService.getCovidNews().subscribe((data: NewsItems) => {
+      console.log('news items: ', data)
       this.storageService.set('totalNewsItems', data.total);
       this.storageService.set('storedNewsItems', data.items);
       this.newsItems = this.storageService.get('storedNewsItems');

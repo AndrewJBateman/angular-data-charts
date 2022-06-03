@@ -5,7 +5,7 @@ export const PAGES: Page[] = [
     title: 'App',
     icon: 'devices',
     content:
-      'This app was built in Angular v13 with Angular Material Design components/icons. There is a top menu for desktop/tablet screens and a burger icon-activated side menu for phone screens. The RxJS reactive programming library is used to handle datastreams and propagation of change using observables',
+      'This app was built in Angular with Angular Material Design components/icons. There is a top menu for desktop/tablet screens and a burger icon-activated side menu for phone screens. The RxJS reactive programming library is used to handle datastreams and propagation of change using observables',
     website1: 'Angular',
     link1: 'https://angular.io/',
     website2: 'Angular Material',
