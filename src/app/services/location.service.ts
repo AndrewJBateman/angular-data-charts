@@ -15,7 +15,7 @@ export class LocationService {
 
   getLocation(): Observable<Location> {
     return this.http.get<Location>(apiUrl).pipe(
-      // tap((data: Location) => console.log('data: ', data.country_name)),
+      // tap((data: Location) => console.log('getLocation data: ', data)),
       map((data: Location) => data),
       catchError(err => {
         return throwError(() => new Error('Location data not found, error: '));

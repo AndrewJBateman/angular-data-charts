@@ -24,4 +24,5 @@ export interface Location {
   region_code: string;
   timezone: string;
   utc_offset: string;
+  version: string;
 }

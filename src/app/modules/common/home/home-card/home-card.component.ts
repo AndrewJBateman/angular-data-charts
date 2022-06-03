@@ -20,8 +20,8 @@ export class HomeCardComponent implements OnInit {
   date: string;
 
   // user country data inputs
-  @Input('userCountry')
-  userCountry: string;
+  @Input('userCountryName')
+  userCountryName: string;
   @Input('userCountryTotalConfirmed')
   userCountryTotalConfirmed: number;
   @Input('userCountryTotalDeaths')

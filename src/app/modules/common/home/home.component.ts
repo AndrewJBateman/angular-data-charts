@@ -12,7 +12,8 @@ import { Location } from '../../../models/location';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public userCountry: string;
+  userCountry: Location;
+  userCountryName: string;
   userCountryCode: '';
   language = '';
   globalData: GlobalCount;
@@ -96,13 +97,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // on initialisation get user location, global & user country total covid figures
+  // On initialisation get user location data and store import PropTypes from 'prop-types'
+  // Get global & user country total covid figures
   // get covid data for all world countries using data service then
   // store this data in local storage the access it & run function to get chart data
   ngOnInit(): void {
     try {
       this.locationService.getLocation().subscribe((data: Location) => {
-        this.userCountry = data.country_name;
+        this.userCountry = data;
         this.storageService.set('userCountry', this.userCountry);
       });
     } catch (error) {
@@ -125,6 +127,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getUserCountryData().subscribe((data: CountryCount[]) => {
       this.userCountryData = data[0];
       this.storageService.set('storedUserCountryCovidData', this.userCountryData);
+      this.userCountryName = this.userCountryData.country;
       this.userCountryTotalConfirmed = this.userCountryData.totalConfirmed;
       this.userCountryTotalRecovered = this.userCountryData.totalRecovered;
       this.userCountryTotalDeaths = this.userCountryData.totalDeaths;
