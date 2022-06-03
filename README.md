@@ -28,7 +28,7 @@
 
 * **General:** Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location and shows data from that country.
 * **Home Page:** World and local Covid data - using [iPapa API](https://ipapi.co/) to detect user country. Data shown in tables on Mat-cards and on Google charts using tab-groups to select between confirmed cases, deaths and recovered.
-* **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries. Flags WERE obtained from the Countryflags API - website is no longer :-( currently looking for replacement flags website.
+* **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries.
 * **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app. **add country select menu.**
 * **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
 * **About Page:** Mat-cards show details of each page with useful links.
@@ -47,8 +47,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v13](https://angular.io/)
-* [Angular Material v13](https://material.angular.io/)
+* [Angular v14](https://angular.io/)
+* [Angular Material v14](https://material.angular.io/)
 * [Angular Material Icons](https://material.io/resources/icons/?style=baseline)
 * [Angular Material theming](https://material.angular.io/guide/theming)
 * [material design colors](https://www.materialpalette.com/colors) palette
@@ -116,7 +116,7 @@ getCovidNews(): Observable<NewsItems> {
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Add blank flag where API cannot find flag
+* To-Do: Add @media width check to resize charts. Add blank flag where API cannot find flag
 
 ## :clap: Inspiration
 
