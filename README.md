@@ -1,6 +1,7 @@
 # :zap: Angular Data Charts
 
-* This is a responsive Angular app that displays Covid API data & news for the user country and worldwide. Data is displayed using google-charts and Angular Material tables/display components.
+* **The Coronavirus API this app is based on no longer exists**
+* This is a responsive Angular app that displayed Covid API data & news for the user country and worldwide. Data was displayed using google-charts and Angular Material tables/display components.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-data-charts?style=plastic)
@@ -29,8 +30,8 @@
 * **General:** Chart data from [Corona API](https://api.coronatracker.com/) JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country. Detects user location and shows data from that country.
 * **Home Page:** World and local Covid data - using [iPapa API](https://ipapi.co/) to detect user country. Data shown in tables on Mat-cards and on Google charts using tab-groups to select between confirmed cases, deaths and recovered.
 * **Countries Page:** Covid data is fetched from local storage and displayed using a Mat-Table of countries.
-* **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app. **add country select menu.**
-* **Charts Page** Pie and column charts using `angular-google-charts`.**add another chart**
+* **News & NewsDetail Pages:** Covid news data is shown on Mat-cards. The Day.js npm module is used to convert the UTC format date into '... ago'. Clicking on a news card will route the user to a news detail page with the JSON data passed using angular router navigation extras. The Coronatracker API does not have a lot of the latest news but it demonstrates a working app.
+* **Charts Page** Pie and column charts using `angular-google-charts`.
 * **About Page:** Mat-cards show details of each page with useful links.
 * **Contact Page:** Mat-card with Github and contact details from the Github API (no API access key required for this).
 
@@ -115,8 +116,8 @@ getCovidNews(): Observable<NewsItems> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working
-* To-Do: Add @media width check to resize charts. Add blank flag where API cannot find flag
+* Status: This was a working app until the Coronavirus API was removed. This code could be adapted to a new API.
+* To-Do: Nothing. Consider Archiving.
 
 ## :clap: Inspiration
 
